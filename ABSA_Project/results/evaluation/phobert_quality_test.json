@@ -1,0 +1,195 @@
+{
+  "exact_match": 0.4199640287769784,
+  "micro_precision": 0.9063399280575539,
+  "micro_recall": 0.9063399280575539,
+  "micro_f1": 0.9063399280575539,
+  "macro_precision": 0.7875959348274626,
+  "macro_recall": 0.7899236145255877,
+  "macro_f1": 0.78791038598957,
+  "weighted_precision": 0.9071928232087301,
+  "weighted_recall": 0.9063399280575539,
+  "weighted_f1": 0.9065119583072783,
+  "accuracy": 0.9063399280575539,
+  "per_class": {
+    "None": {
+      "precision": 0.9598432908912831,
+      "recall": 0.9472870215233922,
+      "f1": 0.9535238218791554,
+      "support": 15518
+    },
+    "Negative": {
+      "precision": 0.7425949103045474,
+      "recall": 0.8054298642533937,
+      "f1": 0.7727371391360972,
+      "support": 2210
+    },
+    "Neutral": {
+      "precision": 0.594222833562586,
+      "recall": 0.5287637698898409,
+      "f1": 0.5595854922279793,
+      "support": 817
+    },
+    "Positive": {
+      "precision": 0.8537227045514338,
+      "recall": 0.878213802435724,
+      "f1": 0.865795090715048,
+      "support": 3695
+    }
+  },
+  "sentiment_macro_precision": 0.7301801494728557,
+  "sentiment_macro_recall": 0.7374691455263195,
+  "sentiment_macro_f1": 0.7327059073597081,
+  "acd_precision": 0.8818772563176895,
+  "acd_recall": 0.9085093722106516,
+  "acd_f1": 0.8949952370484355,
+  "per_aspect": {
+    "BATTERY": {
+      "accuracy": 0.9064748201438849,
+      "precision_macro": 0.7708982928841783,
+      "recall_macro": 0.7765731836602062,
+      "f1_macro": 0.7730704065092256,
+      "f1_weighted": 0.9063165442425397,
+      "acd_f1": 0.9627118644067797,
+      "support": {
+        "None": 1210,
+        "Negative": 368,
+        "Neutral": 92,
+        "Positive": 554
+      }
+    },
+    "CAMERA": {
+      "accuracy": 0.9482913669064749,
+      "precision_macro": 0.8211635724475334,
+      "recall_macro": 0.8330742845659818,
+      "f1_macro": 0.8262095703375294,
+      "f1_weighted": 0.9485199691092329,
+      "acd_f1": 0.9582637729549248,
+      "support": {
+        "None": 1636,
+        "Negative": 171,
+        "Neutral": 71,
+        "Positive": 346
+      }
+    },
+    "DESIGN": {
+      "accuracy": 0.9406474820143885,
+      "precision_macro": 0.7226408593309205,
+      "recall_macro": 0.6758106728982476,
+      "f1_macro": 0.6897260570400962,
+      "f1_weighted": 0.9382397456098895,
+      "acd_f1": 0.8705583756345178,
+      "support": {
+        "None": 1826,
+        "Negative": 96,
+        "Neutral": 28,
+        "Positive": 274
+      }
+    },
+    "FEATURES": {
+      "accuracy": 0.8830935251798561,
+      "precision_macro": 0.7053003884523704,
+      "recall_macro": 0.688569312868718,
+      "f1_macro": 0.6958414959263343,
+      "f1_weighted": 0.8817478451162232,
+      "acd_f1": 0.8728039353478566,
+      "support": {
+        "None": 1513,
+        "Negative": 459,
+        "Neutral": 52,
+        "Positive": 200
+      }
+    },
+    "GENERAL": {
+      "accuracy": 0.8116007194244604,
+      "precision_macro": 0.7125112527112087,
+      "recall_macro": 0.7218683832879883,
+      "f1_macro": 0.7161574805865807,
+      "f1_weighted": 0.8115278234063549,
+      "acd_f1": 0.8761565836298932,
+      "support": {
+        "None": 843,
+        "Negative": 294,
+        "Neutral": 83,
+        "Positive": 1004
+      }
+    },
+    "PERFORMANCE": {
+      "accuracy": 0.8358812949640287,
+      "precision_macro": 0.7451643837974039,
+      "recall_macro": 0.7424934107711916,
+      "f1_macro": 0.7437656945803905,
+      "f1_weighted": 0.8354398144334029,
+      "acd_f1": 0.898167873881551,
+      "support": {
+        "None": 1052,
+        "Negative": 454,
+        "Neutral": 116,
+        "Positive": 602
+      }
+    },
+    "PRICE": {
+      "accuracy": 0.9132194244604317,
+      "precision_macro": 0.7678379248439732,
+      "recall_macro": 0.8420079161439143,
+      "f1_macro": 0.7980816364981961,
+      "f1_weighted": 0.9159611050038527,
+      "acd_f1": 0.9127857747671465,
+      "support": {
+        "None": 1655,
+        "Negative": 79,
+        "Neutral": 328,
+        "Positive": 162
+      }
+    },
+    "SCREEN": {
+      "accuracy": 0.9410971223021583,
+      "precision_macro": 0.7140567546180345,
+      "recall_macro": 0.712003924508334,
+      "f1_macro": 0.6887837148928637,
+      "f1_weighted": 0.942408112773704,
+      "acd_f1": 0.8101694915254237,
+      "support": {
+        "None": 1955,
+        "Negative": 116,
+        "Neutral": 17,
+        "Positive": 136
+      }
+    },
+    "SER&ACC": {
+      "accuracy": 0.8929856115107914,
+      "precision_macro": 0.6298447876192533,
+      "recall_macro": 0.6284973732908223,
+      "f1_macro": 0.6286403387638458,
+      "f1_weighted": 0.8920710847452891,
+      "acd_f1": 0.8260135135135135,
+      "support": {
+        "None": 1631,
+        "Negative": 167,
+        "Neutral": 27,
+        "Positive": 399
+      }
+    },
+    "STORAGE": {
+      "accuracy": 0.9901079136690647,
+      "precision_macro": 0.46287671232876715,
+      "recall_macro": 0.5543038486825469,
+      "f1_macro": 0.5003079924300655,
+      "f1_weighted": 0.9904549252493192,
+      "acd_f1": 0.7540983606557377,
+      "support": {
+        "None": 2197,
+        "Negative": 6,
+        "Neutral": 3,
+        "Positive": 18
+      }
+    }
+  },
+  "latency_per_sample_ms": 11.069114658272914,
+  "throughput_samples_sec": 90.34146188490448,
+  "model_type": "phobert",
+  "checkpoint": "ABSA_Project\\models\\best_phobert_absa.pt",
+  "max_len": 128,
+  "split": "Test",
+  "best_epoch": 5,
+  "total_parameters": 135029032
+}

@@ -1,0 +1,27 @@
+{
+  "experiment_name": "official_seed123",
+  "best_epoch": 5,
+  "best_dev_macro_f1": 0.7839232690099861,
+  "test_loss": 3.9782324403309994,
+  "test_exact_match": 0.4141187050359712,
+  "test_macro_f1_4class": 0.7814555423097357,
+  "test_sentiment_macro_f1": 0.7243547399518087,
+  "test_micro_f1": 0.9033723021582734,
+  "test_acd_f1": 0.893411420204978,
+  "latency_per_sample_ms": 20.104700764389126,
+  "throughput_samples_sec": 49.73961123416824,
+  "total_train_time_sec": 1150.8503980636597,
+  "peak_vram_mb": 2764.15478515625,
+  "per_aspect_test_f1": {
+    "BATTERY": 0.7752534179464844,
+    "CAMERA": 0.8070938768377665,
+    "DESIGN": 0.6637534465902775,
+    "FEATURES": 0.6808051523623662,
+    "GENERAL": 0.7112724996126792,
+    "PERFORMANCE": 0.72467330579126,
+    "PRICE": 0.8038689199946744,
+    "SCREEN": 0.700940745022022,
+    "SER&ACC": 0.6177316318813302,
+    "STORAGE": 0.501976997144441
+  }
+}

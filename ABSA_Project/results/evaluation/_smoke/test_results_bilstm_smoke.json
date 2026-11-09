@@ -1,0 +1,68 @@
+{
+  "experiment_name": "bilstm_smoke",
+  "model": "BiLSTM (from scratch)",
+  "seed": 42,
+  "best_epoch": 1,
+  "best_dev_macro_f1": 0.5926932281651127,
+  "test_loss": 8.052364240373883,
+  "test_micro_precision": 0.7834532374100719,
+  "test_micro_recall": 0.7834532374100719,
+  "test_micro_f1": 0.7834532374100719,
+  "test_macro_precision": 0.6698950184485932,
+  "test_macro_recall": 0.5713279524148738,
+  "test_macro_f1": 0.5959963257052348,
+  "test_weighted_f1": 0.7767979813310395,
+  "test_sentiment_macro_f1": 0.5054081155485467,
+  "test_acd_f1": 0.6834032811903854,
+  "test_exact_match": 0.09802158273381295,
+  "test_per_class": {
+    "None": {
+      "precision": 0.8584852115784827,
+      "recall": 0.8772393349658462,
+      "f1": 0.8677609561752988,
+      "support": 15518
+    },
+    "Negative": {
+      "precision": 0.5111358574610245,
+      "recall": 0.4153846153846154,
+      "f1": 0.4583125312031952,
+      "support": 2210
+    },
+    "Neutral": {
+      "precision": 0.6832298136645962,
+      "recall": 0.2692778457772338,
+      "f1": 0.3863037752414399,
+      "support": 817
+    },
+    "Positive": {
+      "precision": 0.6267291910902696,
+      "recall": 0.7234100135317997,
+      "f1": 0.6716080402010051,
+      "support": 3695
+    }
+  },
+  "per_aspect_test_f1": {
+    "BATTERY": 0.5941624511300306,
+    "CAMERA": 0.5169549086757991,
+    "DESIGN": 0.3688739757261543,
+    "FEATURES": 0.39357355598765487,
+    "GENERAL": 0.4174498990602523,
+    "PERFORMANCE": 0.4530376663117942,
+    "PRICE": 0.49571377438079933,
+    "SCREEN": 0.44012693586924706,
+    "SER&ACC": 0.413644560244129,
+    "STORAGE": 0.2484731961094775
+  },
+  "total_parameters": 3950889,
+  "vocab_size": 5079,
+  "max_len": 128,
+  "batch_size": 32,
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "dropout": 0.3,
+  "epochs": 1,
+  "total_train_time_sec": 19.746538400650024,
+  "peak_vram_mb": 201.14453125,
+  "latency_per_sample_ms": 0.5894206384883226,
+  "throughput_samples_sec": 1696.581243854446
+}

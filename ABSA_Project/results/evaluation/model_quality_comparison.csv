@@ -1,0 +1,14 @@
+﻿Chỉ số,Multi-Head PhoBERT,BiLSTM (từ đầu)
+Tham số,135.029.032,3.950.889
+Micro Precision,90.63,88.35
+Micro Recall,90.63,88.35
+Micro F1,90.63,88.35
+Macro Precision,78.76,75.98
+Macro Recall,78.99,74.71
+Macro F1,78.79,75.30
+Weighted F1,90.65,88.29
+Sentiment Macro F1,73.27,69.09
+ACD F1,89.50,85.84
+Exact Match,42.00,33.95
+Độ trễ (ms/mẫu),11.07,1.35
+Thông lượng (mẫu/s),90.34,740.45

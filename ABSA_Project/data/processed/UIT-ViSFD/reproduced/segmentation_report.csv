@@ -1,0 +1,4 @@
+﻿Dataset,Original_Rows,Processed_Rows,Empty_Segmented_Text,Output_File
+Train.csv,7786,7786,0,D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\data\processed\UIT-ViSFD\reproduced\Train_segmented.csv
+Dev.csv,1112,1112,0,D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\data\processed\UIT-ViSFD\reproduced\Dev_segmented.csv
+Test.csv,2224,2224,0,D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\data\processed\UIT-ViSFD\reproduced\Test_segmented.csv

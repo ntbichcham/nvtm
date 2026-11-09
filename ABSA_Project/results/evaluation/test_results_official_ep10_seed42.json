@@ -1,0 +1,27 @@
+{
+  "experiment_name": "official_ep10_seed42",
+  "best_epoch": 10,
+  "best_dev_macro_f1": 0.800430873764894,
+  "test_loss": 3.735864713037614,
+  "test_exact_match": 0.4689748201438849,
+  "test_macro_f1_4class": 0.812841567747863,
+  "test_sentiment_macro_f1": 0.7643492605002975,
+  "test_micro_f1": 0.916726618705036,
+  "test_acd_f1": 0.9053885172388444,
+  "latency_per_sample_ms": 20.157226438850756,
+  "throughput_samples_sec": 49.60999981984695,
+  "total_train_time_sec": 2302.5700001716614,
+  "peak_vram_mb": 2764.15478515625,
+  "per_aspect_test_f1": {
+    "BATTERY": 0.7999050786059337,
+    "CAMERA": 0.8505333456828836,
+    "DESIGN": 0.7064722203892068,
+    "FEATURES": 0.7566582372577071,
+    "GENERAL": 0.7530572493550535,
+    "PERFORMANCE": 0.7777089403917404,
+    "PRICE": 0.813404771630894,
+    "SCREEN": 0.7274871188751078,
+    "SER&ACC": 0.6638682044183326,
+    "STORAGE": 0.5722898146037535
+  }
+}

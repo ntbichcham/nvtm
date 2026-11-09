@@ -1,0 +1,12 @@
+﻿Columns: ['Aspect', 'Accuracy', 'Precision_Macro', 'Recall_Macro', 'F1_Macro_4Class', 'F1_Weighted', 'ACD_Precision', 'ACD_Recall', 'ACD_F1', 'ASC_Sentiment_F1', 'Support_None', 'Support_Negative', 'Support_Neutral', 'Support_Positive', 'Total_Samples']
+        Aspect  Accuracy  F1_Macro_4Class    ACD_F1  ASC_Sentiment_F1
+0      BATTERY  0.906475         0.773070  0.962712          0.708198
+1       CAMERA  0.948291         0.826210  0.958264          0.773408
+2       DESIGN  0.940647         0.689726  0.870558          0.595591
+3     FEATURES  0.883094         0.695841  0.872804          0.614400
+4      GENERAL  0.811601         0.716157  0.876157          0.692361
+5  PERFORMANCE  0.835881         0.743766  0.898168          0.696273
+6        PRICE  0.913219         0.798082  0.912786          0.741285
+7       SCREEN  0.941097         0.688784  0.810169          0.594722
+8      SER&ACC  0.892986         0.628640  0.826014          0.525891
+9      STORAGE  0.990108         0.500308  0.754098          0.334884

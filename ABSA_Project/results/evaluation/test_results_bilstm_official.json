@@ -1,0 +1,68 @@
+{
+  "experiment_name": "bilstm_official",
+  "model": "BiLSTM (from scratch)",
+  "seed": 42,
+  "best_epoch": 13,
+  "best_dev_macro_f1": 0.7511665829317938,
+  "test_loss": 7.232077169418335,
+  "test_micro_precision": 0.8835431654676259,
+  "test_micro_recall": 0.8835431654676259,
+  "test_micro_f1": 0.8835431654676259,
+  "test_macro_precision": 0.7597680806859656,
+  "test_macro_recall": 0.7470829928742153,
+  "test_macro_f1": 0.7530005479663011,
+  "test_weighted_f1": 0.8828531287562148,
+  "test_sentiment_macro_f1": 0.6909038099827353,
+  "test_acd_f1": 0.858405753670962,
+  "test_exact_match": 0.33947841726618705,
+  "test_per_class": {
+    "None": {
+      "precision": 0.9364032278724221,
+      "recall": 0.9421961592988787,
+      "f1": 0.9392907619169986,
+      "support": 15518
+    },
+    "Negative": {
+      "precision": 0.7085181898846495,
+      "recall": 0.7226244343891403,
+      "f1": 0.7155017921146953,
+      "support": 2210
+    },
+    "Neutral": {
+      "precision": 0.5648021828103683,
+      "recall": 0.5067319461444308,
+      "f1": 0.5341935483870968,
+      "support": 817
+    },
+    "Positive": {
+      "precision": 0.8293487221764221,
+      "recall": 0.8167794316644114,
+      "f1": 0.8230160894464139,
+      "support": 3695
+    }
+  },
+  "per_aspect_test_f1": {
+    "BATTERY": 0.7573310569894206,
+    "CAMERA": 0.783577127389483,
+    "DESIGN": 0.6368248559764698,
+    "FEATURES": 0.7058048797534302,
+    "GENERAL": 0.669627000268492,
+    "PERFORMANCE": 0.6954732400479671,
+    "PRICE": 0.7053412095630638,
+    "SCREEN": 0.6316205311446322,
+    "SER&ACC": 0.582199335194825,
+    "STORAGE": 0.35818317253121457
+  },
+  "total_parameters": 3950889,
+  "vocab_size": 5079,
+  "max_len": 128,
+  "batch_size": 32,
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "dropout": 0.3,
+  "epochs": 20,
+  "total_train_time_sec": 350.05765199661255,
+  "peak_vram_mb": 201.14453125,
+  "latency_per_sample_ms": 0.5962986960374685,
+  "throughput_samples_sec": 1677.011884555865
+}

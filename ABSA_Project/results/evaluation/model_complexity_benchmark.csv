@@ -1,0 +1,3 @@
+Model,Parameters,Latency (ms/sample),Throughput (samples/s),Peak VRAM (MB),Theoretical Time,Parallelism
+MultiHeadPhoBERT (Proposed),"135,029,032",20.24,49.4,606.3,O(N^2 * d + N * d^2),O(1) - Tensor Cores
+BiLSTM Baseline (Reference),"3,950,889",1.37,727.6,113.7,O(N * d^2),O(N) - Sequential

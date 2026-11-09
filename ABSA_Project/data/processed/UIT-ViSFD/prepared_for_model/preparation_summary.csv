@@ -1,0 +1,4 @@
+﻿Dataset,Total_Rows,Missing_Token_Length,Absolute_Date_Count,Relative_Time_Count,Mean_Token_Length,Output_File
+Train,7786,0,6930,856,41.61,Train_prepared.csv
+Dev,1112,0,997,115,40.42,Dev_prepared.csv
+Test,2224,0,1973,251,41.68,Test_prepared.csv

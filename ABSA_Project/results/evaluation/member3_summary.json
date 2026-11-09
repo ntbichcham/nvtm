@@ -1,0 +1,270 @@
+{
+  "means": {
+    "Accuracy": 0.90634,
+    "Precision_Macro": 0.705229,
+    "Recall_Macro": 0.71752,
+    "F1_Macro_4Class": 0.706058,
+    "F1_Weighted": 0.906269,
+    "ACD_Precision": 0.852604,
+    "ACD_Recall": 0.899462,
+    "ACD_F1": 0.874173,
+    "ASC_Sentiment_F1": 0.627701
+  },
+  "weighted_by_support": {
+    "Accuracy": 0.90634,
+    "F1_Macro_4Class": 0.706058,
+    "ACD_F1": 0.874173,
+    "ASC_Sentiment_F1": 0.627701
+  },
+  "confusion_agg": [
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      1780,
+      90,
+      71
+    ],
+    [
+      0,
+      137,
+      432,
+      162
+    ],
+    [
+      0,
+      60,
+      130,
+      3245
+    ]
+  ],
+  "confusion_row_norm": [
+    [
+      NaN,
+      NaN,
+      NaN,
+      NaN
+    ],
+    [
+      0.0,
+      0.9171,
+      0.0464,
+      0.0366
+    ],
+    [
+      0.0,
+      0.1874,
+      0.591,
+      0.2216
+    ],
+    [
+      0.0,
+      0.0175,
+      0.0378,
+      0.9447
+    ]
+  ],
+  "confusion_total": 6107,
+  "overall_acc_from_cm": 0.893565,
+  "error_counts": {
+    "False Positive (Nhận diện khía cạnh thừa)": 818,
+    "Sentiment Misclassification (Sai cực tính cảm xúc)": 650,
+    "False Negative (Bỏ sót khía cạnh)": 615
+  },
+  "error_total": 2083,
+  "error_by_aspect": {
+    "BATTERY": {
+      "False Negative (Bỏ sót khía cạnh)": 20,
+      "False Positive (Nhận diện khía cạnh thừa)": 57,
+      "Sentiment Misclassification (Sai cực tính cảm xúc)": 131
+    },
+    "CAMERA": {
+      "False Negative (Bỏ sót khía cạnh)": 14,
+      "False Positive (Nhận diện khía cạnh thừa)": 36,
+      "Sentiment Misclassification (Sai cực tính cảm xúc)": 65
+    },
+    "DESIGN": {
+      "False Negative (Bỏ sót khía cạnh)": 55,
+      "False Positive (Nhận diện khía cạnh thừa)": 47,
+      "Sentiment Misclassification (Sai cực tính cảm xúc)": 30
+    },
+    "FEATURES": {
+      "False Negative (Bỏ sót khía cạnh)": 90,
+      "False Positive (Nhận diện khía cạnh thừa)": 91,
+      "Sentiment Misclassification (Sai cực tính cảm xúc)": 79
+    },
+    "GENERAL": {
+      "False Negative (Bỏ sót khía cạnh)": 150,
+      "False Positive (Nhận diện khía cạnh thừa)": 198,
+      "Sentiment Misclassification (Sai cực tính cảm xúc)": 71
+    },
+    "PERFORMANCE": {
+      "False Negative (Bỏ sót khía cạnh)": 118,
+      "False Positive (Nhận diện khía cạnh thừa)": 121,
+      "Sentiment Misclassification (Sai cực tính cảm xúc)": 126
+    },
+    "PRICE": {
+      "False Negative (Bỏ sót khía cạnh)": 30,
+      "False Positive (Nhận diện khía cạnh thừa)": 73,
+      "Sentiment Misclassification (Sai cực tính cảm xúc)": 90
+    },
+    "SCREEN": {
+      "False Negative (Bỏ sót khía cạnh)": 30,
+      "False Positive (Nhận diện khía cạnh thừa)": 82,
+      "Sentiment Misclassification (Sai cực tính cảm xúc)": 19
+    },
+    "SER&ACC": {
+      "False Negative (Bỏ sót khía cạnh)": 104,
+      "False Positive (Nhận diện khía cạnh thừa)": 102,
+      "Sentiment Misclassification (Sai cực tính cảm xúc)": 32
+    },
+    "STORAGE": {
+      "False Negative (Bỏ sót khía cạnh)": 4,
+      "False Positive (Nhận diện khía cạnh thừa)": 11,
+      "Sentiment Misclassification (Sai cực tính cảm xúc)": 7
+    }
+  },
+  "conf_mean": 0.6627,
+  "conf_median": 0.6441,
+  "log": [
+    {
+      "epoch": 1,
+      "train_loss": 9.109769,
+      "dev_loss": 5.927374,
+      "dev_macro_f1_4class": 0.689829,
+      "dev_sentiment_macro_f1": 0.611013,
+      "dev_micro_f1": 0.857734,
+      "dev_exact_match": 0.241906,
+      "dev_acd_f1": 0.832745,
+      "lr": 1.8e-05,
+      "epoch_time_sec": 198.998209,
+      "peak_vram_mb": 2768.529785
+    },
+    {
+      "epoch": 2,
+      "train_loss": 5.56702,
+      "dev_loss": 4.760474,
+      "dev_macro_f1_4class": 0.736848,
+      "dev_sentiment_macro_f1": 0.667429,
+      "dev_micro_f1": 0.883453,
+      "dev_exact_match": 0.334532,
+      "dev_acd_f1": 0.877524,
+      "lr": 1.3e-05,
+      "epoch_time_sec": 201.233542,
+      "peak_vram_mb": 2768.529785
+    },
+    {
+      "epoch": 3,
+      "train_loss": 4.35462,
+      "dev_loss": 4.263713,
+      "dev_macro_f1_4class": 0.772927,
+      "dev_sentiment_macro_f1": 0.712016,
+      "dev_micro_f1": 0.904227,
+      "dev_exact_match": 0.404676,
+      "dev_acd_f1": 0.896676,
+      "lr": 9e-06,
+      "epoch_time_sec": 202.009541,
+      "peak_vram_mb": 2768.529785
+    },
+    {
+      "epoch": 4,
+      "train_loss": 3.685404,
+      "dev_loss": 4.07337,
+      "dev_macro_f1_4class": 0.778043,
+      "dev_sentiment_macro_f1": 0.718507,
+      "dev_micro_f1": 0.907734,
+      "dev_exact_match": 0.413669,
+      "dev_acd_f1": 0.900267,
+      "lr": 4e-06,
+      "epoch_time_sec": 201.401901,
+      "peak_vram_mb": 2768.529785
+    },
+    {
+      "epoch": 5,
+      "train_loss": 3.277928,
+      "dev_loss": 3.99522,
+      "dev_macro_f1_4class": 0.781372,
+      "dev_sentiment_macro_f1": 0.722586,
+      "dev_micro_f1": 0.909442,
+      "dev_exact_match": 0.423561,
+      "dev_acd_f1": 0.902891,
+      "lr": 0.0,
+      "epoch_time_sec": 200.12423,
+      "peak_vram_mb": 2768.529785
+    }
+  ],
+  "official": {
+    "experiment_name": "phobert_official",
+    "best_epoch": 5,
+    "best_dev_macro_f1": 0.7813717388677964,
+    "test_loss": 3.8996106497675393,
+    "test_exact_match": 0.4199640287769784,
+    "test_macro_f1_4class": 0.7876747747565404,
+    "test_sentiment_macro_f1": 0.7323525247632486,
+    "test_micro_f1": 0.906294964028777,
+    "test_acd_f1": 0.8953496887586965,
+    "latency_per_sample_ms": 276.3827047212232,
+    "throughput_samples_sec": 3.6181714084051033,
+    "total_train_time_sec": 1123.9755399227142,
+    "peak_vram_mb": 2768.52978515625,
+    "per_aspect_test_f1": {
+      "BATTERY": 0.7721582763866705,
+      "CAMERA": 0.8262095703375294,
+      "DESIGN": 0.687402439790317,
+      "FEATURES": 0.6968997813801918,
+      "GENERAL": 0.7157263236219298,
+      "PERFORMANCE": 0.74185531678136,
+      "PRICE": 0.799812162812037,
+      "SCREEN": 0.6910615415488501,
+      "SER&ACC": 0.6273915016310897,
+      "STORAGE": 0.5039642748621782
+    }
+  },
+  "bench": [
+    {
+      "Model": "MultiHeadPhoBERT (Proposed)",
+      "Parameters": "135,029,032",
+      "Latency (ms/sample)": 19.62,
+      "Throughput (samples/s)": 51.0,
+      "Peak VRAM (MB)": 606.3,
+      "Theoretical Time": "O(N^2 * d + N * d^2)",
+      "Parallelism": "O(1) - Tensor Cores"
+    },
+    {
+      "Model": "BiLSTM Baseline (Reference)",
+      "Parameters": "19,034,665",
+      "Latency (ms/sample)": 1.18,
+      "Throughput (samples/s)": 845.3,
+      "Peak VRAM (MB)": 171.3,
+      "Theoretical Time": "O(N * d^2)",
+      "Parallelism": "O(N) - Sequential"
+    }
+  ],
+  "examples": {
+    "False Positive (Nhận diện khía cạnh thừa)": {
+      "aspect": "SER&ACC",
+      "true": null,
+      "pred": "Positive",
+      "confidence": 0.9929,
+      "comment": "Thật tuyệt máy qua mượt túi thích  như thế giới Di Động có chỗ giá khác túi không hiểu đánh giá 5sao cho thế giới Di Động phương Phú Châu 5sao nhân viên OK"
+    },
+    "Sentiment Misclassification (Sai cực tính cảm xúc)": {
+      "aspect": "FEATURES",
+      "true": "Neutral",
+      "pred": "Negative",
+      "confidence": 0.9767,
+      "comment": "Có ae nào bị như mình ko note 10+ ban ngày vân tay rất nhậy ban đêm thì ko nhạy chạm 3 lần mới dc .chán ss"
+    },
+    "False Negative (Bỏ sót khía cạnh)": {
+      "aspect": "GENERAL",
+      "true": "Positive",
+      "pred": NaN,
+      "confidence": 0.9893,
+      "comment": "Bạn nào muốn có thương hiệu+chip mạnh để chơi game thì mình nghĩ nên chọn s10lite"
+    }
+  }
+}

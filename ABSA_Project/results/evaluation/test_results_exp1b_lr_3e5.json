@@ -1,0 +1,27 @@
+{
+  "experiment_name": "exp1b_lr_3e5",
+  "best_epoch": 4,
+  "best_dev_macro_f1": 0.7846966116392446,
+  "test_loss": 3.781317306079453,
+  "test_exact_match": 0.43884892086330934,
+  "test_macro_f1_4class": 0.7999549234162928,
+  "test_sentiment_macro_f1": 0.7481947227206999,
+  "test_micro_f1": 0.9107464028776978,
+  "test_acd_f1": 0.8996282527881041,
+  "latency_per_sample_ms": 20.122718075536607,
+  "throughput_samples_sec": 49.695075796728986,
+  "total_train_time_sec": 919.5690078735352,
+  "peak_vram_mb": 2764.15478515625,
+  "per_aspect_test_f1": {
+    "BATTERY": 0.7722503290436321,
+    "CAMERA": 0.8320934103274307,
+    "DESIGN": 0.7030540475196903,
+    "FEATURES": 0.7328245529183658,
+    "GENERAL": 0.7373701009879432,
+    "PERFORMANCE": 0.759662746424998,
+    "PRICE": 0.7995910980057507,
+    "SCREEN": 0.7008789910935067,
+    "SER&ACC": 0.6649863503489579,
+    "STORAGE": 0.5471242196088192
+  }
+}

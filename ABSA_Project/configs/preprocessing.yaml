@@ -1,0 +1,65 @@
+# Cấu hình tiền xử lý và EDA cho UIT-ViSFD (đề tài ABSA + PhoBERT)
+#
+# Mọi đường dẫn tương đối so với thư mục gốc của repo (thư mục chứa README.md).
+# Ba script đọc file này: check_dataset.py, preprocess.py, eda_visualization.py.
+
+data:
+  original_dir: ABSA_Project/data/original/UIT-ViSFD
+  processed_dir: ABSA_Project/data/processed/UIT-ViSFD
+  prepared_dir: ABSA_Project/data/processed/UIT-ViSFD/prepared_for_model
+  stats_dir: ABSA_Project/results/statistics
+  figures_dir: ABSA_Project/figures
+
+splits: [Train, Dev, Test]
+
+columns:
+  text: comment
+  label: label
+  rating: n_star
+  date: date_time
+  segmented: comment_segmented
+  normalized: comment_normalized
+
+# Phải trùng khớp với dataset_loader.ASPECT_LIST và dataset_loader.IDX2POLARITY.
+labels:
+  aspects:
+    - BATTERY
+    - CAMERA
+    - DESIGN
+    - FEATURES
+    - GENERAL
+    - PERFORMANCE
+    - PRICE
+    - SCREEN
+    - SER&ACC
+    - STORAGE
+  polarities: ["None", "Negative", "Neutral", "Positive"]
+
+text_normalization:
+  unicode_form: NFC          # NFC giữ nguyên dấu tiếng Việt ở dạng dựng sẵn
+  lowercase: true            # chỉ áp dụng cho cột comment_normalized
+  collapse_whitespace: true
+  strip: true
+
+teencode:
+  # Mặc định TẮT: chỉ bật khi nhóm có bảng quy tắc đã kiểm chứng thủ công.
+  enabled: false
+  rules_file: ABSA_Project/configs/teencode_rules.csv
+  audit_file: ABSA_Project/results/statistics/teencode_audit.csv
+
+segmentation:
+  # auto      : dùng file *_segmented.csv đã có; nếu thiếu thì thử VnCoreNLP
+  # reuse     : chỉ dùng file *_segmented.csv đã có (không cần Java)
+  # vncorenlp : bắt buộc dùng py_vncorenlp (cần Java + model)
+  backend: auto
+  reuse_dir: ABSA_Project/data/processed/UIT-ViSFD
+  vncorenlp_dir: ABSA_Project/models/vncorenlp
+
+tokenizer:
+  name: vinai/phobert-base
+  max_lengths: [128, 256]
+  add_special_tokens: true   # token_length trong prepared files tính cả <s> </s>
+
+output:
+  # Mặc định ghi bản tái tạo vào thư mục riêng để không đụng dữ liệu chính thức.
+  reproduced_dir: ABSA_Project/data/processed/UIT-ViSFD/reproduced

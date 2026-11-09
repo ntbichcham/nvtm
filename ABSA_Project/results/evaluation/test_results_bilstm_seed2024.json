@@ -1,0 +1,68 @@
+{
+  "experiment_name": "bilstm_seed2024",
+  "model": "BiLSTM (from scratch)",
+  "seed": 2024,
+  "best_epoch": 15,
+  "best_dev_macro_f1": 0.7509274055984911,
+  "test_loss": 7.484885590417044,
+  "test_micro_precision": 0.8847571942446043,
+  "test_micro_recall": 0.8847571942446043,
+  "test_micro_f1": 0.8847571942446043,
+  "test_macro_precision": 0.7609563312350022,
+  "test_macro_recall": 0.7448225491723806,
+  "test_macro_f1": 0.7523357114447815,
+  "test_weighted_f1": 0.8838196993352228,
+  "test_sentiment_macro_f1": 0.6893409293221251,
+  "test_acd_f1": 0.8630947920569502,
+  "test_exact_match": 0.3345323741007194,
+  "test_per_class": {
+    "None": {
+      "precision": 0.9383364282512646,
+      "recall": 0.9443227220002578,
+      "f1": 0.941320057812751,
+      "support": 15518
+    },
+    "Negative": {
+      "precision": 0.7087511394712853,
+      "recall": 0.7036199095022625,
+      "f1": 0.7061762034514079,
+      "support": 2210
+    },
+    "Neutral": {
+      "precision": 0.5730180806675939,
+      "recall": 0.5042839657282742,
+      "f1": 0.5364583333333334,
+      "support": 817
+    },
+    "Positive": {
+      "precision": 0.8237196765498652,
+      "recall": 0.827063599458728,
+      "f1": 0.8253882511816341,
+      "support": 3695
+    }
+  },
+  "per_aspect_test_f1": {
+    "BATTERY": 0.7527060960861742,
+    "CAMERA": 0.7822372081891769,
+    "DESIGN": 0.6361720240270271,
+    "FEATURES": 0.6860567188180039,
+    "GENERAL": 0.6872862774046891,
+    "PERFORMANCE": 0.6838864043766774,
+    "PRICE": 0.7276110799668123,
+    "SCREEN": 0.6687647149844052,
+    "SER&ACC": 0.581006914882456,
+    "STORAGE": 0.4333674223768429
+  },
+  "total_parameters": 3950889,
+  "vocab_size": 5079,
+  "max_len": 128,
+  "batch_size": 32,
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "dropout": 0.3,
+  "epochs": 20,
+  "total_train_time_sec": 335.3799648284912,
+  "peak_vram_mb": 201.14453125,
+  "latency_per_sample_ms": 0.5470258543191318,
+  "throughput_samples_sec": 1828.0671600882063
+}

@@ -1,0 +1,7 @@
+﻿Dataset,Date_Format_Type,Count,Percentage
+Train,Absolute_Date_DD_MM_YYYY,6930,89.01
+Train,Relative_Time,856,10.99
+Dev,Absolute_Date_DD_MM_YYYY,997,89.66
+Dev,Relative_Time,115,10.34
+Test,Absolute_Date_DD_MM_YYYY,1973,88.71
+Test,Relative_Time,251,11.29

@@ -1,0 +1,22 @@
+# Model checkpoints (PhoBERT ~1.6 GB) are too large for Git.
+ABSA_Project/models/
+ABSA_Project/models/_smoke/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# Training logs and temporary files
+ABSA_Project/results/logs/
+tmp_pages/
+*.tmp
+*.log
+
+# OS files
+Thumbs.db
+.DS_Store

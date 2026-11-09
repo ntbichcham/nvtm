@@ -1,0 +1,68 @@
+{
+  "experiment_name": "bilstm_seed123",
+  "model": "BiLSTM (from scratch)",
+  "seed": 123,
+  "best_epoch": 8,
+  "best_dev_macro_f1": 0.730749990644574,
+  "test_loss": 5.903857115336827,
+  "test_micro_precision": 0.8779226618705036,
+  "test_micro_recall": 0.8779226618705036,
+  "test_micro_f1": 0.8779226618705036,
+  "test_macro_precision": 0.7420857068579387,
+  "test_macro_recall": 0.7411013881937908,
+  "test_macro_f1": 0.7408970767734991,
+  "test_weighted_f1": 0.877985192050787,
+  "test_sentiment_macro_f1": 0.6756961995589893,
+  "test_acd_f1": 0.8560305567797856,
+  "test_exact_match": 0.3129496402877698,
+  "test_per_class": {
+    "None": {
+      "precision": 0.941686213187386,
+      "recall": 0.9313700219100399,
+      "f1": 0.9364997084170285,
+      "support": 15518
+    },
+    "Negative": {
+      "precision": 0.6925719192786604,
+      "recall": 0.7298642533936651,
+      "f1": 0.7107292355144305,
+      "support": 2210
+    },
+    "Neutral": {
+      "precision": 0.5339805825242718,
+      "recall": 0.47123623011015914,
+      "f1": 0.5006501950585176,
+      "support": 817
+    },
+    "Positive": {
+      "precision": 0.8001041124414368,
+      "recall": 0.8319350473612991,
+      "f1": 0.8157091681040202,
+      "support": 3695
+    }
+  },
+  "per_aspect_test_f1": {
+    "BATTERY": 0.7106508865919896,
+    "CAMERA": 0.7632555406815704,
+    "DESIGN": 0.6185021629035193,
+    "FEATURES": 0.6634126314386549,
+    "GENERAL": 0.6731466058140829,
+    "PERFORMANCE": 0.6666223284652283,
+    "PRICE": 0.7103775469728622,
+    "SCREEN": 0.6366531119443051,
+    "SER&ACC": 0.5838562664053351,
+    "STORAGE": 0.3811035091001417
+  },
+  "total_parameters": 3950889,
+  "vocab_size": 5079,
+  "max_len": 128,
+  "batch_size": 32,
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "dropout": 0.3,
+  "epochs": 20,
+  "total_train_time_sec": 217.96566343307495,
+  "peak_vram_mb": 201.14453125,
+  "latency_per_sample_ms": 0.6352950539549842,
+  "throughput_samples_sec": 1574.0717541787415
+}

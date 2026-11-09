@@ -1,0 +1,27 @@
+{
+  "experiment_name": "exp3a_reg_dropout02",
+  "best_epoch": 4,
+  "best_dev_macro_f1": 0.7649885029705702,
+  "test_loss": 4.242342233657837,
+  "test_exact_match": 0.39298561151079137,
+  "test_macro_f1_4class": 0.766887065604101,
+  "test_sentiment_macro_f1": 0.7058304660261557,
+  "test_micro_f1": 0.8982464028776979,
+  "test_acd_f1": 0.8878511492156147,
+  "latency_per_sample_ms": 20.654943839924773,
+  "throughput_samples_sec": 48.41455913654239,
+  "total_train_time_sec": 920.6128067970276,
+  "peak_vram_mb": 2764.15478515625,
+  "per_aspect_test_f1": {
+    "BATTERY": 0.7327796889239295,
+    "CAMERA": 0.790910556983002,
+    "DESIGN": 0.653786263990291,
+    "FEATURES": 0.6869253797300913,
+    "GENERAL": 0.6929787097021043,
+    "PERFORMANCE": 0.7012429273642198,
+    "PRICE": 0.7824065267893607,
+    "SCREEN": 0.6346906083584547,
+    "SER&ACC": 0.619851766455559,
+    "STORAGE": 0.4833076920747312
+  }
+}
