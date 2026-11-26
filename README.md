@@ -30,6 +30,7 @@ nhom2/
 │   │   ├── original/UIT-ViSFD/          # Dữ liệu gốc (Train.csv, Dev.csv, Test.csv)
 │   │   ├── processed/UIT-ViSFD/         # Dữ liệu tách từ VnCoreNLP & prepared_for_model/
 │   │   └── literature_baselines.csv     # Bảng tổng hợp kết quả từ các nghiên cứu liên quan
+│   ├── demo/                            # Ứng dụng Web Demo (PHP + Python FastAPI API)
 │   ├── figures/                         # Biểu đồ EDA, sơ đồ kiến trúc & hình kết quả báo cáo
 │   ├── models/                          # Trọng số mô hình (.pt) — bỏ qua trên Git (>1.5 GB/file)
 │   ├── results/                         # Kết quả đánh giá, thống kê, multi-seed & báo cáo
@@ -42,7 +43,6 @@ nhom2/
 │   │   └── statistics/                  # Báo cáo thống kê kiểm định dữ liệu
 │   ├── src/                             # Mã nguồn huấn luyện, đánh giá & trực quan hóa
 │   └── tests/                           # Unit tests kiểm chứng hàm tính độ đo
-├── brand_health_demo/                   # Ứng dụng Web Demo (PHP + Python FastAPI API)
 ├── docs/                                # Tài liệu dự án được tổ chức gọn gàng
 │   ├── papers/                          # Các bài báo tham khảo (PhoBERT, ViSoBERT, SA2SL...)
 │   ├── references/                      # Bảng tổng hợp DOI & so sánh thực nghiệm
@@ -153,10 +153,10 @@ python ABSA_Project/src/run_simple_experiments.py \
 
 ## 🌐 6. Ứng dụng Web Demo (Brand Health Intelligence)
 
-Hệ thống demo tích hợp mô hình PhoBERT ABSA vào dashboard theo dõi sức khỏe thương hiệu nằm trong thư mục [`brand_health_demo/`](brand_health_demo/):
-- **Backend AI:** Python FastAPI (`brand_health_demo/python_api/`)
-- **Web Dashboard:** PHP / MySQL (`brand_health_demo/public/`, `app/`)
-- Xem chi tiết hướng dẫn cài đặt tại [`brand_health_demo/README.md`](brand_health_demo/README.md).
+Hệ thống demo tích hợp mô hình PhoBERT ABSA vào dashboard theo dõi sức khỏe thương hiệu nằm trong thư mục [`ABSA_Project/demo/`](ABSA_Project/demo/):
+- **Backend AI:** Python FastAPI (`ABSA_Project/demo/python_api/`)
+- **Web Dashboard:** PHP / MySQL (`ABSA_Project/demo/public/`, `ABSA_Project/demo/app/`)
+- Xem chi tiết hướng dẫn cài đặt tại [`ABSA_Project/demo/README.md`](ABSA_Project/demo/README.md).
 
 ---
 

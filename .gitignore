@@ -15,8 +15,8 @@ venv/
 .env
 **/.env
 !**/.env.example
-brand_health_demo/python_api/.vncorenlp/
-brand_health_demo/database/backups/*.sql
+ABSA_Project/demo/python_api/.vncorenlp/
+ABSA_Project/demo/database/backups/*.sql
 
 # Training logs and temporary files
 ABSA_Project/results/logs/

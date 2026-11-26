@@ -11,12 +11,13 @@ from dataclasses import dataclass
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent
-BRAND_HEALTH_DIR = BASE_DIR.parent
-PROJECT_ROOT = BRAND_HEALTH_DIR.parent
+DEMO_DIR = BASE_DIR.parent
+ABSA_ROOT = DEMO_DIR.parent
+PROJECT_ROOT = ABSA_ROOT.parent
 
-DEFAULT_CHECKPOINT = PROJECT_ROOT / "ABSA_Project" / "models" / "best_phobert_absa.pt"
-DEFAULT_MODEL_CODE_DIR = PROJECT_ROOT / "ABSA_Project" / "src"
-DEFAULT_VNCORENLP_DIR = PROJECT_ROOT / "ABSA_Project" / "models" / "vncorenlp"
+DEFAULT_CHECKPOINT = ABSA_ROOT / "models" / "best_phobert_absa.pt"
+DEFAULT_MODEL_CODE_DIR = ABSA_ROOT / "src"
+DEFAULT_VNCORENLP_DIR = ABSA_ROOT / "models" / "vncorenlp"
 
 # Nạp file .env nếu có. Không bắt buộc cài python-dotenv.
 try:
