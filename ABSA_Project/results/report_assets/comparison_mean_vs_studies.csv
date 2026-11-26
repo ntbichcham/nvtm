@@ -1,0 +1,9 @@
+﻿study_id,study,model,task,role,acd_f1,acd_f1_std,asc_f1,asc_f1_std,delta_acd,delta_asc,protocol,source,notes
+group_mean_3seed_es20,Nhóm 2 (mean 3 seed),Multi-Head PhoBERT ES 20/3,ACD+ASC+4-class,project_best,90.706592,0.188115,76.945274,0.135856,,,same_internal_split,project_mean_3seed.csv,Trung bình 3 seed 42/123/2024; không phải checkpoint seed 42.
+group_mean_3seed_linear_svc,Nhóm 2 (mean 3 seed),linear_svc (tham chiếu),ACD+ASC+4-class,project_reference,84.531250,0.000000,66.410093,0.000000,,,same_internal_split,ABSA_Project/results/cli_experiments/summary.csv,Mô hình đơn giản tốt nhất; kết quả tất định nên std = 0.
+sa2sl_bilstm,SA2SL (Phan et al.),Bi-LSTM (original),ACD+ASC,related_study,84.480000,,63.060000,,6.226592,13.885274,reported_original,10.1007/978-3-030-82147-0_53,Số liệu công bố gốc; không chạy lại trên máy của nhóm.
+sa2sl_lstm,SA2SL (Phan et al.),LSTM,ACD+ASC,related_study,80.270000,,52.130000,,10.436592,24.815274,reported_original,10.1007/978-3-030-82147-0_53,Baseline học sâu trong bài SA2SL.
+sa2sl_cnn,SA2SL (Phan et al.),CNN,ACD+ASC,related_study,69.700000,,27.160000,,21.006592,49.785274,reported_original,10.1007/978-3-030-82147-0_53,Baseline CNN trong bài SA2SL.
+thin_phobert,Thin et al. (Aspect-Category),PhoBERT,ASC,related_study,,,74.440000,,,2.505274,reported_aspect_category_single_task,"Table 6, So_Sanh_Chi_Tiet_Da_Chieu_Voi_Cac_Bai_Bao_Goc.docx",Chỉ báo cáo ASC macro P/R/F1; không báo cáo ACD.
+thin_cnn,Thin et al. (Aspect-Category),CNN,ASC,related_study,,,65.650000,,,11.295274,reported_aspect_category_single_task,"Table 6, So_Sanh_Chi_Tiet_Da_Chieu_Voi_Cac_Bai_Bao_Goc.docx",Chỉ báo cáo ASC macro P/R/F1; không báo cáo ACD.
+thin_svm,Thin et al. (Aspect-Category),SVM,ASC,related_study,,,64.840000,,,12.105274,reported_aspect_category_single_task,"Table 6, So_Sanh_Chi_Tiet_Da_Chieu_Voi_Cac_Bai_Bao_Goc.docx",Chỉ báo cáo ASC macro P/R/F1; không báo cáo ACD.

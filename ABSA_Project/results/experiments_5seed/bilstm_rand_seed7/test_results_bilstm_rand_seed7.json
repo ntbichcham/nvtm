@@ -1,0 +1,68 @@
+{
+  "experiment_name": "bilstm_rand_seed7",
+  "model": "BiLSTM (from scratch)",
+  "seed": 7,
+  "best_epoch": 13,
+  "best_dev_macro_f1": 0.7469857332030525,
+  "test_loss": 6.906509113311768,
+  "test_micro_precision": 0.883318345323741,
+  "test_micro_recall": 0.883318345323741,
+  "test_micro_f1": 0.883318345323741,
+  "test_macro_precision": 0.750526552177216,
+  "test_macro_recall": 0.7501851397956012,
+  "test_macro_f1": 0.7501686221756537,
+  "test_weighted_f1": 0.8833987461678425,
+  "test_sentiment_macro_f1": 0.6867653200612618,
+  "test_acd_f1": 0.863441337475958,
+  "test_exact_match": 0.33363309352517984,
+  "test_per_class": {
+    "None": {
+      "precision": 0.9426314426314426,
+      "recall": 0.9381363577780641,
+      "f1": 0.9403785285188295,
+      "support": 15518
+    },
+    "Negative": {
+      "precision": 0.6960313999127781,
+      "recall": 0.7221719457013575,
+      "f1": 0.7088607594936709,
+      "support": 2210
+    },
+    "Neutral": {
+      "precision": 0.5396618985695709,
+      "recall": 0.5079559363525091,
+      "f1": 0.5233291298865069,
+      "support": 817
+    },
+    "Positive": {
+      "precision": 0.8237814675950723,
+      "recall": 0.8324763193504736,
+      "f1": 0.8281060708036074,
+      "support": 3695
+    }
+  },
+  "per_aspect_test_f1": {
+    "BATTERY": 0.7423184700936823,
+    "CAMERA": 0.761954303365508,
+    "DESIGN": 0.6426649738347683,
+    "FEATURES": 0.6843561533965282,
+    "GENERAL": 0.6792787587120098,
+    "PERFORMANCE": 0.6965573839702361,
+    "PRICE": 0.7364548064114316,
+    "SCREEN": 0.6514890197671679,
+    "SER&ACC": 0.6096887103976665,
+    "STORAGE": 0.4867684096466695
+  },
+  "total_parameters": 3950889,
+  "vocab_size": 5079,
+  "max_len": 128,
+  "batch_size": 32,
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "dropout": 0.3,
+  "epochs": 20,
+  "total_train_time_sec": 223.50044178962708,
+  "peak_vram_mb": 3199.642578125,
+  "latency_per_sample_ms": 0.5063773381237775,
+  "throughput_samples_sec": 1974.8119133948344
+}

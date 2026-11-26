@@ -1,0 +1,37 @@
+﻿metric,family,applies_to_absa,definition,why,where_reported
+Accuracy,classification,yes,Tỉ lệ cặp (đánh giá × khía cạnh) dự đoán đúng nhãn.,"Độ đo cơ bản, dễ hiểu.",metrics_{split}.json → global.accuracy
+Balanced accuracy,classification,yes,Trung bình recall từng lớp.,Chống ảo giác do None chiếm đa số.,global.balanced_accuracy
+Precision / Recall / F1 (micro),classification,yes,Gộp toàn bộ cặp trước khi tính P/R/F1.,Phù hợp khi mỗi cặp có đúng một nhãn.,global.micro_*
+Precision / Recall / F1 (macro),classification,yes,Trung bình không trọng số trên 4 lớp.,Đánh giá công bằng lớp hiếm (Neutral).,global.macro_*
+Precision / Recall / F1 (weighted),classification,yes,Trung bình theo support từng lớp.,Phản ánh phân bố thực tế.,global.weighted_*
+Cohen's kappa (linear),agreement,yes,Đồng thuận có hiệu chỉnh ngẫu nhiên.,Kiểm tra mô hình có học thật hay đoán mò.,global.cohen_kappa
+Cohen's kappa (quadratic),agreement,yes,Kappa có trọng số bậc hai theo khoảng cách nhãn.,Phù hợp thứ tự Negative<Neutral<Positive.,global.cohen_kappa_quadratic
+Matthews correlation coefficient,classification,yes,Tương quan giữa nhãn thật và dự đoán trên 4 lớp.,"Cân bằng, ổn định với mất cân bằng.",global.mcc
+ROC-AUC OVR (macro/micro/weighted),ranking,yes,Diện tích dưới đường ROC one-vs-rest.,Đo khả năng xếp hạng xác suất.,global.roc_auc_ovr_*
+PR-AUC / Average Precision,ranking,yes,Diện tích dưới đường precision-recall.,Tốt hơn ROC-AUC khi lớp hiếm.,global.pr_auc_* + per_class.average_precision
+Log loss,probability,yes,Cross-entropy của xác suất dự đoán.,"Đo chất lượng xác suất, không chỉ nhãn.",global.log_loss
+Brier score (multi-class),probability,yes,Trung bình bình phương sai lệch xác suất.,Đo hiệu chỉnh xác suất.,global.brier_score_multiclass
+Expected Calibration Error (ECE),probability,yes,Sai lệch trung bình giữa confidence và accuracy.,Kiểm tra độ tin cậy có phản ánh đúng.,global.ece_10bin
+Top-2 / Top-3 accuracy,ranking,yes,Nhãn thật nằm trong top-k xác suất.,Hữu ích khi nhãn lân cận dễ nhầm.,global.top{k}_accuracy
+Confusion matrix 4×4,diagnostic,yes,Ma trận đếm nhãn thật × nhãn dự đoán.,Chỉ rõ nhầm lẫn giữa các nhãn.,confusion_matrix_{split}.csv
+Confusion matrix ACD (None vs Mention),diagnostic,yes,Ma trận 2×2 cho phát hiện khía cạnh.,Tách lỗi phát hiện khỏi lỗi phân cực.,confusion_matrix_acd_{split}.csv
+Per-class P/R/F1 + support,diagnostic,yes,Chỉ số từng lớp cảm xúc.,Phát hiện lớp yếu.,per_class_{split}.csv
+Per-aspect P/R/F1 + kappa + MCC,diagnostic,yes,Chỉ số đầy đủ cho từng trong 10 khía cạnh.,Phát hiện khía cạnh khó (STORAGE).,per_aspect_{split}.csv
+Exact match,multi-output,yes,Cả 10 khía cạnh đều đúng nhãn.,Đo mức đúng trọn vẹn một đánh giá.,aspect_detection_{split}.csv → exact_match
+Hamming loss,multi-output,yes,Tỉ lệ cặp dự đoán sai.,Đo sai số trung bình trên 10 head.,aspect_detection_{split}.csv
+Subset accuracy (aspect set),multi-output,yes,Tập khía cạnh dự đoán trùng khít tập thật.,Đo riêng phần phát hiện khía cạnh.,aspect_detection_{split}.csv
+ACD precision/recall/F1,ABSA,yes,Phát hiện khía cạnh (None vs mention).,Bài toán con chuẩn của ABSA.,aspect_detection_{split}.csv → acd_*
+ASC macro P/R/F1,ABSA,yes,Phân cực cảm xúc chỉ trên lớp 1..3.,Bài toán con chuẩn thứ hai của ABSA.,global.sentiment_macro_*
+Aspect-set precision/recall/F1,multi-output,adapted,P/R/F1 theo tập khía cạnh của từng đánh giá.,Đánh giá mức khớp tập khía cạnh.,aspect_detection_{split}.csv
+IoU / Jaccard,adapted,adapted,Jaccard giữa tập khía cạnh thật và dự đoán của từng đánh giá.,IoU gốc là độ đo phân đoạn ảnh; ở ABSA dùng Jaccard tập khía cạnh.,aspect_detection_{split}.csv → aspect_set_iou_mean
+CMC@k,adapted,adapted,Tỉ lệ khía cạnh thật nằm trong top-k khía cạnh theo mention score = 1 − P(None).,CMC gốc là nhận dạng sinh trắc; ở ABSA dùng xếp hạng khía cạnh.,aspect_detection_{split}.csv → cmc_*
+mAP (aspect detection),adapted,adapted,"Average precision của phát hiện khía cạnh nhị phân, macro/micro.",mAP gốc là phát hiện đối tượng; ở ABSA dùng AP phát hiện khía cạnh.,aspect_detection_{split}.csv → aspect_map_*
+mAP@k,adapted,adapted,AP@k trong xếp hạng khía cạnh của từng đánh giá.,Phiên bản giới hạn top-k của mAP khía cạnh.,aspect_detection_{split}.csv → aspect_map@k
+Loss / accuracy theo epoch,training,conditional,"Đường cong huấn luyện từng epoch, chỉ cho sgd_log và mlp.",Các mô hình closed-form/ensemble không có epoch.,train_log.csv + figures/learning_curves.png
+Histogram dữ liệu,descriptive,yes,"Phân bố nhãn, khía cạnh, độ dài, đồng xuất hiện.","Mô tả dữ liệu, không phải kết quả mô hình.",results/dataset_histograms/
+Histogram độ tin cậy,diagnostic,yes,Phân bố max probability cho dự đoán đúng/sai.,Chỉ ra mô hình quá tự tin hay không.,figures/confidence_hist_test.png
+PSNR,steganography,no,Peak signal-to-noise ratio giữa ảnh gốc và ảnh nhúng.,Bài toán ABSA không có ảnh bìa/payload nhúng.,Không áp dụng — không tạo số liệu.
+SSIM,steganography,no,Độ tương đồng cấu trúc ảnh.,Không có ảnh để so sánh.,Không áp dụng.
+BER,steganography,no,Bit error rate của payload.,Không có payload.,Không áp dụng.
+Capacity,steganography,no,Số bit nhúng được.,Không có kênh nhúng.,Không áp dụng.
+Robustness (JPEG/crop/noise),steganography,no,Độ bền payload trước biến đổi ảnh.,Không có ảnh/payload.,Không áp dụng.

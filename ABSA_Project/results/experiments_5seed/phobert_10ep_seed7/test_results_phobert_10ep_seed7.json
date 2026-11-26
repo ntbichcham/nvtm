@@ -1,0 +1,27 @@
+{
+  "experiment_name": "phobert_10ep_seed7",
+  "best_epoch": 8,
+  "best_dev_macro_f1": 0.8052488652830099,
+  "test_loss": 3.677479382899168,
+  "test_exact_match": 0.4635791366906475,
+  "test_macro_f1_4class": 0.8129170775258112,
+  "test_sentiment_macro_f1": 0.7642627045185852,
+  "test_micro_f1": 0.9168615107913669,
+  "test_acd_f1": 0.9060977410305625,
+  "latency_per_sample_ms": 20.117650359706,
+  "throughput_samples_sec": 49.70759418321126,
+  "total_train_time_sec": 2374.0166099071503,
+  "peak_vram_mb": 2765.81494140625,
+  "per_aspect_test_f1": {
+    "BATTERY": 0.8168796588818046,
+    "CAMERA": 0.8456536013637267,
+    "DESIGN": 0.7368944771356792,
+    "FEATURES": 0.7273549203764844,
+    "GENERAL": 0.7599449488991995,
+    "PERFORMANCE": 0.7842755092503519,
+    "PRICE": 0.8102844448706805,
+    "SCREEN": 0.7413283117907326,
+    "SER&ACC": 0.6699427695556097,
+    "STORAGE": 0.5763548552541601
+  }
+}

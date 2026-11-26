@@ -1,0 +1,7 @@
+{
+  "vocab_size": 5079,
+  "matrix_rows": 5079,
+  "dim": 300,
+  "rebuilt_vocab": true,
+  "note": "vocab dựng lại từ Train bằng baseline_data.build_vocab; ma trận embedding giữ nguyên bản gốc."
+}

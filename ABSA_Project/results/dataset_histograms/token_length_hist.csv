@@ -1,0 +1,10 @@
+﻿split,quantile,value
+train,0.25,26.0
+train,0.5,34.0
+train,0.75,49.0
+dev,0.25,26.0
+dev,0.5,33.0
+dev,0.75,48.0
+test,0.25,26.0
+test,0.5,34.0
+test,0.75,49.25

@@ -1,0 +1,290 @@
+{
+  "experiment_name": "bilstm_ft_seed7",
+  "model": "BiLSTM + fastText",
+  "seed": 7,
+  "epochs_planned": 20,
+  "last_epoch": 16,
+  "best_epoch": 13,
+  "stopped_early": true,
+  "patience": 3,
+  "best_dev_macro_f1": 0.7524438632596157,
+  "test_loss": 6.521914597920009,
+  "test_micro_f1": 0.8847571942446043,
+  "test_macro_f1": 0.753968448087902,
+  "test_macro_f1_4class": 0.753968448087902,
+  "test_sentiment_macro_f1": 0.6916481891174721,
+  "test_acd_f1": 0.865176001771087,
+  "test_acd_macro_f1": 0.8305898109504213,
+  "test_pair_micro_f1": 0.9701129067965464,
+  "test_pair_macro_f1": 0.9347800448835536,
+  "test_exact_match": 0.34757194244604317,
+  "test_n_samples": 2224,
+  "test_n_label_cells": 22240,
+  "per_aspect_test_f1": {
+    "BATTERY": 0.7437917621754535,
+    "CAMERA": 0.8255804084148154,
+    "DESIGN": 0.6665047550462455,
+    "FEATURES": 0.714660265387657,
+    "GENERAL": 0.6891011343163067,
+    "PERFORMANCE": 0.6895811406171471,
+    "PRICE": 0.7132374922600514,
+    "SCREEN": 0.638006263295315,
+    "SER&ACC": 0.6003334336536489,
+    "STORAGE": 0.46471400782236205
+  },
+  "total_parameters": 4264477,
+  "vocab_size": 5079,
+  "embedding_dim": 300,
+  "freeze_embeddings": false,
+  "embedding_path": "ABSA_Project/results/experiments_2026\\fasttext\\fasttext_embeddings.npy",
+  "max_len": 128,
+  "batch_size": 32,
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "dropout": 0.3,
+  "total_train_time_sec": 212.97141432762146,
+  "peak_vram_mb": 3199.642578125,
+  "latency_per_sample_ms": 0.550778911863797,
+  "throughput_samples_sec": 1815.6105443762733,
+  "predictions_csv": "ABSA_Project/results/experiments_5seed\\bilstm_ft_seed7\\predictions_bilstm_ft_seed7.csv",
+  "predictions_jsonl": "ABSA_Project/results/experiments_5seed\\bilstm_ft_seed7\\predictions_bilstm_ft_seed7.jsonl",
+  "test_metrics_full": {
+    "exact_match": 0.34757194244604317,
+    "micro_precision": 0.8847571942446043,
+    "micro_recall": 0.8847571942446043,
+    "micro_f1": 0.8847571942446043,
+    "macro_precision": 0.7527454296966997,
+    "macro_recall": 0.7553906508514231,
+    "macro_f1": 0.753968448087902,
+    "weighted_precision": 0.88528266993997,
+    "weighted_recall": 0.8847571942446043,
+    "weighted_f1": 0.8849786614865127,
+    "accuracy": 0.8847571942446043,
+    "per_class": {
+      "None": {
+        "precision": 0.9441957043670106,
+        "recall": 0.9376852687201959,
+        "f1": 0.9409292249991917,
+        "support": 15518
+      },
+      "Negative": {
+        "precision": 0.7105726872246696,
+        "recall": 0.7298642533936651,
+        "f1": 0.7200892857142858,
+        "support": 2210
+      },
+      "Neutral": {
+        "precision": 0.5368020304568528,
+        "recall": 0.5177478580171359,
+        "f1": 0.5271028037383177,
+        "support": 817
+      },
+      "Positive": {
+        "precision": 0.8194112967382657,
+        "recall": 0.8362652232746955,
+        "f1": 0.8277524778998124,
+        "support": 3695
+      }
+    },
+    "sentiment_macro_precision": 0.6889286714732626,
+    "sentiment_macro_recall": 0.6946257782284988,
+    "sentiment_macro_f1": 0.6916481891174721,
+    "acd_precision": 0.8583980084931908,
+    "acd_recall": 0.8720618863433502,
+    "acd_f1": 0.865176001771087,
+    "per_aspect": {
+      "BATTERY": {
+        "accuracy": 0.8812949640287769,
+        "precision_macro": 0.7399996113339975,
+        "recall_macro": 0.7489277342711226,
+        "f1_macro": 0.7437917621754535,
+        "f1_weighted": 0.8832679073301283,
+        "acd_f1": 0.9508840864440079,
+        "support": {
+          "None": 1210,
+          "Negative": 368,
+          "Neutral": 92,
+          "Positive": 554
+        }
+      },
+      "CAMERA": {
+        "accuracy": 0.9325539568345323,
+        "precision_macro": 0.7987185976820823,
+        "recall_macro": 0.8591010567859301,
+        "f1_macro": 0.8255804084148154,
+        "f1_weighted": 0.9349957890197086,
+        "acd_f1": 0.9230769230769231,
+        "support": {
+          "None": 1636,
+          "Negative": 171,
+          "Neutral": 71,
+          "Positive": 346
+        }
+      },
+      "DESIGN": {
+        "accuracy": 0.9244604316546763,
+        "precision_macro": 0.6888216904250996,
+        "recall_macro": 0.6508012837443241,
+        "f1_macro": 0.6665047550462455,
+        "f1_weighted": 0.9221879546284916,
+        "acd_f1": 0.8320610687022901,
+        "support": {
+          "None": 1826,
+          "Negative": 96,
+          "Neutral": 28,
+          "Positive": 274
+        }
+      },
+      "FEATURES": {
+        "accuracy": 0.8655575539568345,
+        "precision_macro": 0.7173565398468293,
+        "recall_macro": 0.7121450232834898,
+        "f1_macro": 0.714660265387657,
+        "f1_weighted": 0.8649904938963963,
+        "acd_f1": 0.8349928876244666,
+        "support": {
+          "None": 1513,
+          "Negative": 459,
+          "Neutral": 52,
+          "Positive": 200
+        }
+      },
+      "GENERAL": {
+        "accuracy": 0.7720323741007195,
+        "precision_macro": 0.6847231630335255,
+        "recall_macro": 0.6968245792172344,
+        "f1_macro": 0.6891011343163067,
+        "f1_weighted": 0.7717732651343657,
+        "acd_f1": 0.8492091388400703,
+        "support": {
+          "None": 843,
+          "Negative": 294,
+          "Neutral": 83,
+          "Positive": 1004
+        }
+      },
+      "PERFORMANCE": {
+        "accuracy": 0.8026079136690647,
+        "precision_macro": 0.6904866173525397,
+        "recall_macro": 0.6896173414044425,
+        "f1_macro": 0.6895811406171471,
+        "f1_weighted": 0.8015010831451644,
+        "acd_f1": 0.8782350445481545,
+        "support": {
+          "None": 1052,
+          "Negative": 454,
+          "Neutral": 116,
+          "Positive": 602
+        }
+      },
+      "PRICE": {
+        "accuracy": 0.8866906474820144,
+        "precision_macro": 0.7132922594482801,
+        "recall_macro": 0.7173615353067393,
+        "f1_macro": 0.7132374922600514,
+        "f1_weighted": 0.8862582303418205,
+        "acd_f1": 0.8696428571428572,
+        "support": {
+          "None": 1655,
+          "Negative": 79,
+          "Neutral": 328,
+          "Positive": 162
+        }
+      },
+      "SCREEN": {
+        "accuracy": 0.9307553956834532,
+        "precision_macro": 0.6318275749193522,
+        "recall_macro": 0.6465991269071347,
+        "f1_macro": 0.638006263295315,
+        "f1_weighted": 0.9312288512431883,
+        "acd_f1": 0.7711711711711712,
+        "support": {
+          "None": 1955,
+          "Negative": 116,
+          "Neutral": 17,
+          "Positive": 136
+        }
+      },
+      "SER&ACC": {
+        "accuracy": 0.8633093525179856,
+        "precision_macro": 0.6024435893811586,
+        "recall_macro": 0.5994747805438599,
+        "f1_macro": 0.6003334336536489,
+        "f1_weighted": 0.8639451712874359,
+        "acd_f1": 0.7784431137724551,
+        "support": {
+          "None": 1631,
+          "Negative": 167,
+          "Neutral": 27,
+          "Positive": 399
+        }
+      },
+      "STORAGE": {
+        "accuracy": 0.9883093525179856,
+        "precision_macro": 0.4624979301208809,
+        "recall_macro": 0.4709705153492136,
+        "f1_macro": 0.46471400782236205,
+        "f1_weighted": 0.9881652104386891,
+        "acd_f1": 0.6181818181818182,
+        "support": {
+          "None": 2197,
+          "Negative": 6,
+          "Neutral": 3,
+          "Positive": 18
+        }
+      }
+    },
+    "acd_micro_precision": 0.8583980084931908,
+    "acd_micro_recall": 0.8720618863433502,
+    "acd_micro_f1": 0.865176001771087,
+    "acd_macro_precision": 0.8251867198078922,
+    "acd_macro_recall": 0.8367200008110751,
+    "acd_macro_f1": 0.8305898109504213,
+    "acd_defined_aspects": 10,
+    "sentiment_micro_precision": 0.7506223458778738,
+    "sentiment_micro_recall": 0.7625706634930081,
+    "sentiment_micro_f1": 0.7565493321526087,
+    "sentiment_support": {
+      "Negative": 2210,
+      "Neutral": 817,
+      "Positive": 3695
+    },
+    "pair_micro_precision": 0.962512813003368,
+    "pair_micro_recall": 0.9778339779827432,
+    "pair_micro_f1": 0.9701129067965464,
+    "pair_macro_precision": 0.9496738173711177,
+    "pair_macro_recall": 0.9384857478473573,
+    "pair_macro_f1": 0.9347800448835536,
+    "pair_support": {
+      "tp": 6573,
+      "fp": 256,
+      "fn": 149,
+      "true_pairs": 6722,
+      "pred_pairs": 6829,
+      "observed_pairs": 30
+    },
+    "n_samples": 2224,
+    "n_label_cells": 22240,
+    "aspects": [
+      "BATTERY",
+      "CAMERA",
+      "DESIGN",
+      "FEATURES",
+      "GENERAL",
+      "PERFORMANCE",
+      "PRICE",
+      "SCREEN",
+      "SER&ACC",
+      "STORAGE"
+    ],
+    "polarity_classes": [
+      "None",
+      "Negative",
+      "Neutral",
+      "Positive"
+    ],
+    "label_convention": "dataset_loader (0=None, 1=Negative, 2=Neutral, 3=Positive)",
+    "zero_division_policy": "cell-level metrics: 0 when denominator is 0; ACD macro: undefined aspects skipped, 1.0 if none defined; sentiment/pair macro: average over fixed classes/observed pairs with 0 when undefined",
+    "loss": 6.521914597920009
+  }
+}

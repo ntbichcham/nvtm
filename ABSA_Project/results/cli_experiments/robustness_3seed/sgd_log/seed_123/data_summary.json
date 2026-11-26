@@ -1,0 +1,251 @@
+{
+  "train": {
+    "split": "train",
+    "path": "D:\\Ct255-NVTM(BI)\\nhom2\\ABSA_Project\\data\\processed\\UIT-ViSFD\\prepared_for_model\\Train_prepared.csv",
+    "rows": 7786,
+    "columns": [
+      "index",
+      "comment",
+      "n_star",
+      "date_time",
+      "label",
+      "comment_segmented",
+      "token_length",
+      "date_parsed",
+      "date_status",
+      "dataset_split"
+    ],
+    "text_column": "comment_segmented",
+    "label_column": "label",
+    "empty_text_rows": 0,
+    "label_counts": {
+      "None": 53988,
+      "Negative": 7464,
+      "Neutral": 2903,
+      "Positive": 13505
+    },
+    "label_percent": {
+      "None": 69.33984073978937,
+      "Negative": 9.586437194965322,
+      "Neutral": 3.7284870279989724,
+      "Positive": 17.34523503724634
+    },
+    "aspect_mentions": {
+      "BATTERY": 3604,
+      "CAMERA": 2146,
+      "DESIGN": 1378,
+      "FEATURES": 2642,
+      "GENERAL": 4866,
+      "PERFORMANCE": 4140,
+      "PRICE": 2061,
+      "SCREEN": 949,
+      "SER&ACC": 1995,
+      "STORAGE": 91
+    },
+    "aspect_mention_percent": {
+      "BATTERY": 46.288209606986904,
+      "CAMERA": 27.562291292062675,
+      "DESIGN": 17.698433085024405,
+      "FEATURES": 33.93269971744156,
+      "GENERAL": 62.49678910865656,
+      "PERFORMANCE": 53.1723606473157,
+      "PRICE": 26.47058823529412,
+      "SCREEN": 12.188543539686616,
+      "SER&ACC": 25.622912920626767,
+      "STORAGE": 1.1687644490110454
+    },
+    "aspect_count_per_review": {
+      "mean": 3.0660159260210635,
+      "min": 0,
+      "max": 9,
+      "histogram": {
+        "0": 1029,
+        "1": 1792,
+        "2": 2013,
+        "3": 1558,
+        "4": 825,
+        "5": 340,
+        "6": 90,
+        "7": 23,
+        "8": 1,
+        "9": 0
+      }
+    },
+    "token_length": {
+      "count": 7786,
+      "mean": 41.60634472129463,
+      "std": 23.35257424096496,
+      "min": 5.0,
+      "p25": 26.0,
+      "median": 34.0,
+      "p75": 49.0,
+      "max": 278.0
+    }
+  },
+  "dev": {
+    "split": "dev",
+    "path": "D:\\Ct255-NVTM(BI)\\nhom2\\ABSA_Project\\data\\processed\\UIT-ViSFD\\prepared_for_model\\Dev_prepared.csv",
+    "rows": 1112,
+    "columns": [
+      "index",
+      "comment",
+      "n_star",
+      "date_time",
+      "label",
+      "comment_segmented",
+      "token_length",
+      "date_parsed",
+      "date_status",
+      "dataset_split"
+    ],
+    "text_column": "comment_segmented",
+    "label_column": "label",
+    "empty_text_rows": 0,
+    "label_counts": {
+      "None": 7804,
+      "Negative": 1011,
+      "Neutral": 381,
+      "Positive": 1924
+    },
+    "label_percent": {
+      "None": 70.17985611510792,
+      "Negative": 9.091726618705035,
+      "Neutral": 3.426258992805755,
+      "Positive": 17.302158273381295
+    },
+    "aspect_mentions": {
+      "BATTERY": 504,
+      "CAMERA": 296,
+      "DESIGN": 187,
+      "FEATURES": 381,
+      "GENERAL": 689,
+      "PERFORMANCE": 582,
+      "PRICE": 252,
+      "SCREEN": 121,
+      "SER&ACC": 290,
+      "STORAGE": 14
+    },
+    "aspect_mention_percent": {
+      "BATTERY": 45.32374100719424,
+      "CAMERA": 26.618705035971225,
+      "DESIGN": 16.81654676258993,
+      "FEATURES": 34.26258992805755,
+      "GENERAL": 61.96043165467626,
+      "PERFORMANCE": 52.33812949640287,
+      "PRICE": 22.66187050359712,
+      "SCREEN": 10.881294964028777,
+      "SER&ACC": 26.07913669064748,
+      "STORAGE": 1.2589928057553956
+    },
+    "aspect_count_per_review": {
+      "mean": 2.9820143884892087,
+      "min": 0,
+      "max": 7,
+      "histogram": {
+        "0": 156,
+        "1": 261,
+        "2": 301,
+        "3": 209,
+        "4": 112,
+        "5": 46,
+        "6": 9,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      }
+    },
+    "token_length": {
+      "count": 1112,
+      "mean": 40.41996402877698,
+      "std": 22.35840491856034,
+      "min": 6.0,
+      "p25": 26.0,
+      "median": 33.0,
+      "p75": 48.0,
+      "max": 245.0
+    }
+  },
+  "test": {
+    "split": "test",
+    "path": "D:\\Ct255-NVTM(BI)\\nhom2\\ABSA_Project\\data\\processed\\UIT-ViSFD\\prepared_for_model\\Test_prepared.csv",
+    "rows": 2224,
+    "columns": [
+      "index",
+      "comment",
+      "n_star",
+      "date_time",
+      "label",
+      "comment_segmented",
+      "token_length",
+      "date_parsed",
+      "date_status",
+      "dataset_split"
+    ],
+    "text_column": "comment_segmented",
+    "label_column": "label",
+    "empty_text_rows": 0,
+    "label_counts": {
+      "None": 15518,
+      "Negative": 2210,
+      "Neutral": 817,
+      "Positive": 3695
+    },
+    "label_percent": {
+      "None": 69.77517985611512,
+      "Negative": 9.93705035971223,
+      "Neutral": 3.673561151079137,
+      "Positive": 16.614208633093526
+    },
+    "aspect_mentions": {
+      "BATTERY": 1014,
+      "CAMERA": 588,
+      "DESIGN": 398,
+      "FEATURES": 711,
+      "GENERAL": 1381,
+      "PERFORMANCE": 1172,
+      "PRICE": 569,
+      "SCREEN": 269,
+      "SER&ACC": 593,
+      "STORAGE": 27
+    },
+    "aspect_mention_percent": {
+      "BATTERY": 45.593525179856115,
+      "CAMERA": 26.43884892086331,
+      "DESIGN": 17.89568345323741,
+      "FEATURES": 31.969424460431657,
+      "GENERAL": 62.09532374100719,
+      "PERFORMANCE": 52.69784172661871,
+      "PRICE": 25.58453237410072,
+      "SCREEN": 12.095323741007194,
+      "SER&ACC": 26.663669064748202,
+      "STORAGE": 1.2140287769784173
+    },
+    "aspect_count_per_review": {
+      "mean": 3.022482014388489,
+      "min": 0,
+      "max": 9,
+      "histogram": {
+        "0": 290,
+        "1": 546,
+        "2": 562,
+        "3": 445,
+        "4": 220,
+        "5": 99,
+        "6": 21,
+        "7": 3,
+        "8": 1,
+        "9": 0
+      }
+    },
+    "token_length": {
+      "count": 2224,
+      "mean": 41.67805755395683,
+      "std": 24.119694492550142,
+      "min": 5.0,
+      "p25": 26.0,
+      "median": 34.0,
+      "p75": 49.25,
+      "max": 302.0
+    }
+  }
+}

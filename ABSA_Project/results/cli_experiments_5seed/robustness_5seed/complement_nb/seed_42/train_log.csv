@@ -1,0 +1,2 @@
+﻿epoch,note
+N/A,This estimator is not trained epoch-by-epoch; per-epoch loss/accuracy is not defined.

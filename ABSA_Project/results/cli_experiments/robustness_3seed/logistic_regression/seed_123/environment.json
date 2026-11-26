@@ -1,0 +1,26 @@
+{
+  "timestamp": "2026-11-14T20:36:13+07:00",
+  "python": "3.10.22 | packaged by Anaconda, Inc. | (main, Oct  1 2026, 20:15:38) [MSC v.1942 64 bit (AMD64)]",
+  "python_executable": "D:\\conda_envs\\vicloabsa_gpu\\python.exe",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "machine": "AMD64",
+  "processor": "Intel64 Family 6 Model 186 Stepping 2, GenuineIntel",
+  "hostname": "LAPTOP-64CC7PDB",
+  "cpu_count": 12,
+  "cwd": "D:\\Ct255-NVTM(BI)\\nhom2",
+  "sklearn": "1.7.2",
+  "numpy": "2.2.6",
+  "pandas": "2.3.3",
+  "scipy": "1.15.3",
+  "matplotlib": "3.10.9",
+  "git": {
+    "commit": "581592b4b0e940ceacd81f4871c49f557bf045bd",
+    "branch": "master",
+    "describe": "581592b-dirty",
+    "status_short": "M ../.gitignore\n M ../README.md\n?? ../ABSA_Project.ipynb\n?? ../ABSA_Project.zip\n?? ABSA_Experiment_2026.ipynb\n?? data/literature_baselines.csv\n?? results/cli_experiments/\n?? results/dataset_histograms/\n?? results/experiments_2026/\n?? results/report_assets/\n?? src/analyze_dataset_histograms.py\n?? src/build_experiment_report.py\n?? src/build_literature_table.py\n?? src/build_weekly_report.py\n?? src/experiment_metrics.py\n?? src/fasttext_embedding.py\n?? src/model_bilstm_fasttext.py\n?? src/run_experiments_2026.py\n?? src/run_simple_experiments.py\n?? src/simple_model_zoo.py\n?? src/summarize_runs.py\n?? src/train_bilstm_fasttext.py\n?? ../ABSA_Project_backup.ipynb\n?? ../Aspect-Category.pdf\n?? ../BAO_CAO_GIAI_DOAN_7_WEBSITE_BHI.docx\n?? ../BAO_CAO_GIAI_DOAN_7_WEBSITE_BHI.pdf\n?? ../BAO_CAO_TIEN_DO_TUAN_CLI_THUC_NGHIEM.docx\n?? ../BAO_CAO_TIEN_DO_TUAN_CLI_THUC_NGHIEM.md\n?? ../Bao_Cao_Thuc_Nghiem_So_Sanh_Va_Early_Stopping.docx\n?? \"../Noi_dung_nghien_cuu_ABSA_PhoBERT (1).docx\"\n?? ../PhoBert_Pre-Trained.pdf\n?? ../SA2SL.pdf\n?? ../So_Sanh_Chi_Tiet_Da_Chieu_Voi_Cac_Bai_Bao_Goc.docx\n?? ../So_Sanh_So_Lieu_Bao_Cao_Voi_Cac_Bai_Bao_PDF.docx\n?? \"../T\\303\\240i li\\341\\273\\207u kh\\303\\264ng c\\303\\263 ti\\303\\252u \\304\\221\\341\\273\\201.docx\"\n?? ../UIT_ViSFD_ABSA_BHI_90_bai_DOI_duy_nhat.csv\n?? ../UIT_ViSFD_ABSA_BHI_90_bai_DOI_duy_nhat.xlsx\n?? ../ViSoBert.pdf\n?? ../after_223.txt\n?? ../bang_so_sanh_mo_hinh_va_early_stopping.csv\n?? ../baocao_NVTM_CT255_backup_20261108_2015.docx\n?? ../baocao_NVTM_CT255_backup_20261109_1038.docx\n?? ../baocao_NVTM_CT255_backup_20261109_1100.docx\n?? ../baocao_NVTM_CT255_backup_P0.docx\n?? ../baocao_NVTM_CT255_backup_P0.pdf\n?? ../brand_health_demo/\n?? ../caption_dump.txt\n?? ../chapter3_part2.py\n?? ../chapter3_part3.py\n?? ../chapter3_part4.py\n?? ../check_per_aspect_local.py\n?? ../create_multi_dimensional_comparison_docx.py\n?? ../create_word_report.py\n?? ../docx_dump.txt\n?? ../export_comparison_files.py\n?? ../extract_papers_info.py\n?? ../extract_sa2sl_details.py\n?? ../generate_chapter3_figures.py\n?? ../generate_paper_comparison_docx.py\n?? ../get_table5.py\n?? ../headings_found.txt\n?? ../hstyle.txt\n?? ../insert_chapter3.py\n?? ../insert_front_back.py\n?? ../insert_member3_chapter.py\n?? ../inspect_detailed_cols.py\n?? ../notebook_summary.txt\n?? ../numbering.txt\n?? ../other_docs.txt\n?? ../papers_extracted_raw.txt\n?? ../parafull.txt\n?? ../parse_benchmark_tables.py\n?? ../read_sa2sl_txt.py\n?? ../report_end.txt\n?? ../report_text.txt\n?? ../sa2sl_full_text.txt\n?? ../sections_summary.txt\n?? ../struct_dump.txt\n?? ../styles_dump.txt\n?? ../tables_dump.txt\n?? ../toc_out.txt\n?? ../update_report_experiments.py"
+  },
+  "command": "D:\\conda_envs\\vicloabsa_gpu\\python.exe D:\\Ct255-NVTM(BI)\\nhom2\\ABSA_Project\\src\\run_simple_experiments.py --models majority stratified multinomial_nb complement_nb logistic_regression linear_svc ridge sgd_log decision_tree --seeds 42 123 2024 --tag robustness_3seed --output-dir D:\\Ct255-NVTM(BI)\\nhom2\\ABSA_Project\\results\\cli_experiments",
+  "torch": "2.13.0+cu130",
+  "cuda_available": true,
+  "gpu": "NVIDIA GeForce RTX 2050"
+}

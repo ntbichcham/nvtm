@@ -1,0 +1,553 @@
+====================================================================================================
+UIT-ViSFD ABSA — KẾT QUẢ THỰC NGHIỆM MÔ HÌNH ĐƠN GIẢN
+Báo cáo sinh tự động, số liệu lấy từ lần chạy thực tế (không mô phỏng).
+====================================================================================================
+
+====================================================================================================
+1. THÔNG TIN LẦN CHẠY
+====================================================================================================
+  Run ID                            : robustness_5seed/ridge/seed_42
+  Model                             : ridge
+  Model kind                        : linear
+  Model description                 : TF-IDF + Ridge Classifier; decision scores -> softmax.
+  Seed                              : 42
+  Tag                               : robustness_5seed
+  Timestamp                         : 2026-11-16T23:41:01+07:00
+  Command                           : C:\Users\admin\AppData\Local\Python\pythoncore-3.14-64\python.exe ABSA_Project\src\run_simple_experiments.py --models default --seeds 42 123 2024 7 777 --tag robustness_5seed --output-dir ABSA_Project\results\cli_experiments_5seed
+  Wall time (fit)                   : 1.3939 s
+  Output directory                  : D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\results\cli_experiments_5seed\robustness_5seed\ridge\seed_42
+
+====================================================================================================
+2. MÔI TRƯỜNG
+====================================================================================================
+  Python                            : 3.14.7 (tags/v3.14.7:823f032, Aug  5 2026, 10:51:32) [MSC v.1944 64 bit (AMD64)]
+  Executable                        : C:\Users\admin\AppData\Local\Python\pythoncore-3.14-64\python.exe
+  Platform                          : Windows-11-10.0.26200-SP0
+  Hostname                          : LAPTOP-64CC7PDB
+  CPU count                         : 12
+  scikit-learn                      : 1.9.1
+  NumPy                             : 2.5.3
+  Pandas                            : 3.0.5
+  SciPy                             : 1.18.1
+  Matplotlib                        : 3.11.2
+  PyTorch                           : 2.14.0+cu130
+  CUDA available                    : True
+  GPU                               : NVIDIA GeForce RTX 2050
+  Git commit                        : 581592b4b0e940ceacd81f4871c49f557bf045bd
+  Git branch                        : master
+  Git describe                      : 581592b-dirty
+
+====================================================================================================
+3. THÔNG TIN DỮ LIỆU
+====================================================================================================
+  Data directory                    : D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\data\processed\UIT-ViSFD\prepared_for_model
+  Text column                       : comment_segmented
+  Label column                      : label
+  Label format                      : {ASPECT#Polarity};... (e.g. {CAMERA#Positive};{BATTERY#Negative};)
+  Fixed aspect order (10)           : BATTERY, CAMERA, DESIGN, FEATURES, GENERAL, PERFORMANCE, PRICE, SCREEN, SER&ACC, STORAGE
+  Fixed label order (4)             : None, Negative, Neutral, Positive
+
+  [train] D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\data\processed\UIT-ViSFD\prepared_for_model\Train_prepared.csv
+    train rows                      : 7786
+    train empty text                : 0
+    train label counts              : None=53988, Negative=7464, Neutral=2903, Positive=13505
+    train aspect mentions           : BATTERY=3604, CAMERA=2146, DESIGN=1378, FEATURES=2642, GENERAL=4866, PERFORMANCE=4140, PRICE=2061, SCREEN=949, SER&ACC=1995, STORAGE=91
+    train aspects/review            : mean=3.066, min=0, max=9
+    train token length              : mean=41.61, median=34, p25=26, p75=49, max=278
+
+  [dev] D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\data\processed\UIT-ViSFD\prepared_for_model\Dev_prepared.csv
+    dev rows                        : 1112
+    dev empty text                  : 0
+    dev label counts                : None=7804, Negative=1011, Neutral=381, Positive=1924
+    dev aspect mentions             : BATTERY=504, CAMERA=296, DESIGN=187, FEATURES=381, GENERAL=689, PERFORMANCE=582, PRICE=252, SCREEN=121, SER&ACC=290, STORAGE=14
+    dev aspects/review              : mean=2.982, min=0, max=7
+    dev token length                : mean=40.42, median=33, p25=26, p75=48, max=245
+
+  [test] D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\data\processed\UIT-ViSFD\prepared_for_model\Test_prepared.csv
+    test rows                       : 2224
+    test empty text                 : 0
+    test label counts               : None=15518, Negative=2210, Neutral=817, Positive=3695
+    test aspect mentions            : BATTERY=1014, CAMERA=588, DESIGN=398, FEATURES=711, GENERAL=1381, PERFORMANCE=1172, PRICE=569, SCREEN=269, SER&ACC=593, STORAGE=27
+    test aspects/review             : mean=3.022, min=0, max=9
+    test token length               : mean=41.68, median=34, p25=26, p75=49, max=302
+
+====================================================================================================
+4. SIÊU THAM SỐ (HYPERPARAMETERS)
+====================================================================================================
+  Vectorizer                        : {"type": "word TF-IDF", "word_ngram_range": [1, 2], "char_ngram_range": null, "max_features": 30000, "char_max_features": null, "min_df": 2, "max_df": 0.95, "sublinear_tf": true, "lowercase": true, "token_pattern": "(?u)\\b\\w+\\b"}
+  Number of features                : 30000
+  Number of heads                   : 10
+  Classes per head                  : None, Negative, Neutral, Positive
+  Class weight                      : balanced
+  C (LR/SVC)                        : 1.0
+  NB alpha                          : 1.0
+  Ridge alpha                       : 1.0
+  SGD alpha                         : 0.0001
+  MLP alpha                         : 0.0001
+  Max iterations (LR/SVC)           : 1000
+  Solver (LR)                       : lbfgs
+  Epochs (SGD/MLP)                  : 20
+  Batch size (MLP)                  : 64
+  Learning rate (MLP)               : 0.001
+  Hidden layers (MLP)               : [256, 128]
+  Trees (RF/ET)                     : 200
+  Max depth (tree/RF/ET)            : None
+  Min samples leaf                  : 1
+  kNN neighbours                    : 15
+  Random seed                       : 42
+
+====================================================================================================
+5. KIẾN TRÚC
+====================================================================================================
+  Multi-head classifier: one independent 4-class classifier per aspect,
+  all sharing the same TF-IDF feature matrix.  The 10 heads preserve the
+  official UIT-ViSFD aspect order and the 4-class order None/Negative/
+  Neutral/Positive.  Head outputs are concatenated to (N, 10, 4).
+
+  Feature extraction                : word TF-IDF
+  Per-head estimator                : ridge
+  Loss / objective                  : log loss (SGD/MLP) or the estimator's native objective
+  Output shape                      : (N reviews, 10 aspects, 4 labels)
+  Constant heads                    : 0
+  Head n_iter                       : BATTERY=N/A, CAMERA=N/A, DESIGN=N/A, FEATURES=N/A, GENERAL=N/A, PERFORMANCE=N/A, PRICE=N/A, SCREEN=N/A, SER&ACC=N/A, STORAGE=N/A
+
+====================================================================================================
+6. KẾT QUẢ TRÊN TẬP TRAIN
+====================================================================================================
+  Số đánh giá                       : 7786
+  Số cặp (đánh giá × khía cạnh)     : 77860
+
+  --- Độ đo phân loại tổng hợp (flatten toàn bộ 10 head) ---
+  Accuracy                                  : 0.9895 (98.95%)
+  Balanced accuracy                         : 0.9944 (99.44%)
+  Precision (micro)                         : 0.9895 (98.95%)
+  Recall (micro)                            : 0.9895 (98.95%)
+  F1 (micro)                                : 0.9895 (98.95%)
+  Precision (macro)                         : 0.9758 (97.58%)
+  Recall (macro)                            : 0.9944 (99.44%)
+  F1 (macro)                                : 0.9849 (98.49%)
+  Precision (weighted)                      : 0.9897 (98.97%)
+  Recall (weighted)                         : 0.9895 (98.95%)
+  F1 (weighted)                             : 0.9895 (98.95%)
+  Cohen's kappa (linear)                    : 0.9782 (97.82%)
+  Cohen's kappa (quadratic)                 : 0.9785 (97.85%)
+  Matthews correlation coefficient          : 0.9784 (97.84%)
+  ROC-AUC OVR (macro)                       : 0.9995 (99.95%)
+  ROC-AUC OVR (micro)                       : 0.9994 (99.94%)
+  ROC-AUC OVR (weighted)                    : 0.9992 (99.92%)
+  PR-AUC / AP (macro)                       : 0.9977 (99.77%)
+  PR-AUC / AP (micro)                       : 0.9983 (99.83%)
+  Log loss                                  : 0.5389 (53.89%)
+  Brier score (multi-class)                 : 0.2367 (23.67%)
+  Expected calibration error (10 bins)      : 0.3967 (39.67%)
+  Top-2 accuracy                            : 0.9990 (99.90%)
+  Top-3 accuracy                            : 0.9997 (99.97%)
+  ASC precision (macro, labels 1..3)        : 0.9683 (96.83%)
+  ASC recall (macro, labels 1..3)           : 0.9968 (99.68%)
+  ASC F1 (macro, labels 1..3)               : 0.9823 (98.23%)
+  ACD precision (mention vs None)           : 0.9717 (97.17%)
+  ACD recall (mention vs None)              : 0.9965 (99.65%)
+  ACD F1 (mention vs None)                  : 0.9840 (98.40%)
+
+  --- Độ đo theo từng lớp cảm xúc ---
+  Class          Support  Precision    Recall        F1   AUC-OVR    AP-OVR
+  -------------------------------------------------------------------------
+  None             53988 0.9984 (99.84%) 0.9872 (98.72%) 0.9928 (99.28%) 0.9991 (99.91%) 0.9996 (99.96%)
+  Negative          7464 0.9607 (96.07%) 0.9993 (99.93%) 0.9796 (97.96%) 0.9999 (99.99%) 0.9986 (99.86%)
+  Neutral           2903 0.9686 (96.86%) 1.0000 (100.00%) 0.9841 (98.41%) 0.9999 (99.99%) 0.9974 (99.74%)
+  Positive         13505 0.9754 (97.54%) 0.9910 (99.10%) 0.9832 (98.32%) 0.9993 (99.93%) 0.9952 (99.52%)
+
+  --- Độ đo theo từng khía cạnh ---
+  Aspect            N      Acc   MacroP   MacroR  MacroF1  WeightF1    Kappa      MCC      AUC   ACD-F1
+  -----------------------------------------------------------------------------------------------------
+  BATTERY        7786 0.9911 (99.11%) 0.9885 (98.85%) 0.9949 (99.49%) 0.9916 (99.16%) 0.9911 (99.11%) 0.9857 (98.57%) 0.9857 (98.57%) 0.9993 (99.93%) 0.9919 (99.19%)
+  CAMERA         7786 0.9937 (99.37%) 0.9854 (98.54%) 0.9975 (99.75%) 0.9913 (99.13%) 0.9937 (99.37%) 0.9859 (98.59%) 0.9860 (98.60%) 0.9996 (99.96%) 0.9889 (98.89%)
+  DESIGN         7786 0.9888 (98.88%) 0.9724 (97.24%) 0.9966 (99.66%) 0.9841 (98.41%) 0.9890 (98.90%) 0.9642 (96.42%) 0.9649 (96.49%) 0.9997 (99.97%) 0.9694 (96.94%)
+  FEATURES       7786 0.9886 (98.86%) 0.9828 (98.28%) 0.9952 (99.52%) 0.9889 (98.89%) 0.9886 (98.86%) 0.9777 (97.77%) 0.9779 (97.79%) 0.9996 (99.96%) 0.9836 (98.36%)
+  GENERAL        7786 0.9726 (97.26%) 0.9606 (96.06%) 0.9833 (98.33%) 0.9715 (97.15%) 0.9726 (97.26%) 0.9565 (95.65%) 0.9566 (95.66%) 0.9980 (99.80%) 0.9810 (98.10%)
+  PERFORMANCE    7786 0.9895 (98.95%) 0.9875 (98.75%) 0.9938 (99.38%) 0.9906 (99.06%) 0.9895 (98.95%) 0.9840 (98.40%) 0.9841 (98.41%) 0.9996 (99.96%) 0.9907 (99.07%)
+  PRICE          7786 0.9891 (98.91%) 0.9757 (97.57%) 0.9963 (99.63%) 0.9857 (98.57%) 0.9892 (98.92%) 0.9750 (97.50%) 0.9753 (97.53%) 0.9996 (99.96%) 0.9798 (97.98%)
+  SCREEN         7786 0.9905 (99.05%) 0.9610 (96.10%) 0.9973 (99.73%) 0.9783 (97.83%) 0.9907 (99.07%) 0.9587 (95.87%) 0.9595 (95.95%) 0.9999 (99.99%) 0.9625 (96.25%)
+  SER&ACC        7786 0.9915 (99.15%) 0.9739 (97.39%) 0.9970 (99.70%) 0.9850 (98.50%) 0.9916 (99.16%) 0.9796 (97.96%) 0.9798 (97.98%) 0.9999 (99.99%) 0.9837 (98.37%)
+  STORAGE        7786 0.9994 (99.94%) 0.9728 (97.28%) 0.9998 (99.98%) 0.9859 (98.59%) 0.9994 (99.94%) 0.9730 (97.30%) 0.9734 (97.34%) 1.0000 (100.00%) 0.9733 (97.33%)
+
+  --- Độ đo mức khía cạnh / tập khía cạnh / xếp hạng ---
+  Exact match (all 10 aspects correct)            : 0.9033 (90.33%)
+  Hamming loss (4-class)                          : 0.0105 (1.05%)
+  Hamming loss (mention)                          : 0.0100 (1.00%)
+  Subset accuracy (aspect set)                    : 0.9077 (90.77%)
+  Mention precision (micro)                       : 0.9717 (97.17%)
+  Mention recall (micro)                          : 0.9965 (99.65%)
+  Mention F1 (micro) = ACD F1                     : 0.9840 (98.40%)
+  Mention F1 (macro)                              : 0.9805 (98.05%)
+  Mention F1 (weighted)                           : 0.9840 (98.40%)
+  Set precision (mean per review)                 : 0.9722 (97.22%)
+  Set recall (mean per review)                    : 0.9964 (99.64%)
+  Set F1 (mean per review)                        : 0.9793 (97.93%)
+  Aspect-set IoU / Jaccard (mean)                 : 0.9692 (96.92%)
+  Aspect-set IoU / Jaccard (std)                  : 0.1136 (11.36%)
+  mAP aspect detection (macro over aspects)       : 0.9975 (99.75%)
+  mAP aspect detection (micro)                    : 0.9971 (99.71%)
+  mAP@k inside each review:
+    mAP@1  : 0.9975 (99.75%)
+    mAP@3  : 1.1860
+    mAP@5  : 1.5100
+    mAP@10 : 2.1432
+  CMC@k (aspect-detection ranking):
+      k     Recall@k        Hit@k    All-aspects@k
+     @1 0.4183 (41.83%) 0.9975 (99.75%)  0.1327 (13.27%)
+     @2 0.7042 (70.42%) 1.0000 (100.00%)  0.3648 (36.48%)
+     @3 0.8734 (87.34%) 1.0000 (100.00%)  0.6252 (62.52%)
+     @4 0.9563 (95.63%) 1.0000 (100.00%)  0.8301 (83.01%)
+     @5 0.9877 (98.77%) 1.0000 (100.00%)  0.9394 (93.94%)
+     @6 0.9974 (99.74%) 1.0000 (100.00%)  0.9844 (98.44%)
+     @7 0.9995 (99.95%) 1.0000 (100.00%)  0.9965 (99.65%)
+     @8 1.0000 (100.00%) 1.0000 (100.00%)  0.9997 (99.97%)
+     @9 1.0000 (100.00%) 1.0000 (100.00%) 1.0000 (100.00%)
+    @10 1.0000 (100.00%) 1.0000 (100.00%) 1.0000 (100.00%)
+
+  --- Confusion matrix 4x4 (toàn bộ cặp đánh giá × khía cạnh) ---
+                    None  Negative   Neutral  Positive
+  None             53295       278        78       337
+  Negative             4      7459         1         0
+  Neutral              0         0      2903         0
+  Positive            79        27        15     13384
+
+  --- Confusion matrix ACD: None vs Mention ---
+                    None   Mention
+  None             53295       693
+  Mention             83     23789
+
+====================================================================================================
+7. KẾT QUẢ TRÊN TẬP DEV
+====================================================================================================
+  Số đánh giá                       : 1112
+  Số cặp (đánh giá × khía cạnh)     : 11120
+
+  --- Độ đo phân loại tổng hợp (flatten toàn bộ 10 head) ---
+  Accuracy                                  : 0.8754 (87.54%)
+  Balanced accuracy                         : 0.7118 (71.18%)
+  Precision (micro)                         : 0.8754 (87.54%)
+  Recall (micro)                            : 0.8754 (87.54%)
+  F1 (micro)                                : 0.8754 (87.54%)
+  Precision (macro)                         : 0.7456 (74.56%)
+  Recall (macro)                            : 0.7118 (71.18%)
+  F1 (macro)                                : 0.7250 (72.50%)
+  Precision (weighted)                      : 0.8728 (87.28%)
+  Recall (weighted)                         : 0.8754 (87.54%)
+  F1 (weighted)                             : 0.8736 (87.36%)
+  Cohen's kappa (linear)                    : 0.7313 (73.13%)
+  Cohen's kappa (quadratic)                 : 0.7960 (79.60%)
+  Matthews correlation coefficient          : 0.7314 (73.14%)
+  ROC-AUC OVR (macro)                       : 0.9400 (94.00%)
+  ROC-AUC OVR (micro)                       : 0.9731 (97.31%)
+  ROC-AUC OVR (weighted)                    : 0.9583 (95.83%)
+  PR-AUC / AP (macro)                       : 0.7582 (75.82%)
+  PR-AUC / AP (micro)                       : 0.9382 (93.82%)
+  Log loss                                  : 0.7057 (70.57%)
+  Brier score (multi-class)                 : 0.3463 (34.63%)
+  Expected calibration error (10 bins)      : 0.3342 (33.42%)
+  Top-2 accuracy                            : 0.9585 (95.85%)
+  Top-3 accuracy                            : 0.9859 (98.59%)
+  ASC precision (macro, labels 1..3)        : 0.6840 (68.40%)
+  ASC recall (macro, labels 1..3)           : 0.6360 (63.60%)
+  ASC F1 (macro, labels 1..3)               : 0.6551 (65.51%)
+  ACD precision (mention vs None)           : 0.8538 (85.38%)
+  ACD recall (mention vs None)              : 0.8347 (83.47%)
+  ACD F1 (mention vs None)                  : 0.8442 (84.42%)
+
+  --- Độ đo theo từng lớp cảm xúc ---
+  Class          Support  Precision    Recall        F1   AUC-OVR    AP-OVR
+  -------------------------------------------------------------------------
+  None              7804 0.9304 (93.04%) 0.9393 (93.93%) 0.9348 (93.48%) 0.9625 (96.25%) 0.9834 (98.34%)
+  Negative          1011 0.6705 (67.05%) 0.6944 (69.44%) 0.6822 (68.22%) 0.9506 (95.06%) 0.7149 (71.49%)
+  Neutral            381 0.5778 (57.78%) 0.4094 (40.94%) 0.4793 (47.93%) 0.8879 (88.79%) 0.4697 (46.97%)
+  Positive          1924 0.8036 (80.36%) 0.8041 (80.41%) 0.8038 (80.38%) 0.9591 (95.91%) 0.8646 (86.46%)
+
+  --- Độ đo theo từng khía cạnh ---
+  Aspect            N      Acc   MacroP   MacroR  MacroF1  WeightF1    Kappa      MCC      AUC   ACD-F1
+  -----------------------------------------------------------------------------------------------------
+  BATTERY        1112 0.8921 (89.21%) 0.7569 (75.69%) 0.7104 (71.04%) 0.7183 (71.83%) 0.8821 (88.21%) 0.8185 (81.85%) 0.8197 (81.97%) 0.9470 (94.70%) 0.9450 (94.50%)
+  CAMERA         1112 0.9011 (90.11%) 0.7203 (72.03%) 0.6871 (68.71%) 0.7015 (70.15%) 0.8980 (89.80%) 0.7658 (76.58%) 0.7663 (76.63%) 0.9458 (94.58%) 0.8931 (89.31%)
+  DESIGN         1112 0.9065 (90.65%) 0.6125 (61.25%) 0.5405 (54.05%) 0.5590 (55.90%) 0.8997 (89.97%) 0.6679 (66.79%) 0.6694 (66.94%) 0.8874 (88.74%) 0.7348 (73.48%)
+  FEATURES       1112 0.8399 (83.99%) 0.6338 (63.38%) 0.5784 (57.84%) 0.5899 (58.99%) 0.8268 (82.68%) 0.6737 (67.37%) 0.6764 (67.64%) 0.8721 (87.21%) 0.8154 (81.54%)
+  GENERAL        1112 0.7653 (76.53%) 0.6584 (65.84%) 0.6810 (68.10%) 0.6658 (66.58%) 0.7653 (76.53%) 0.6239 (62.39%) 0.6255 (62.55%) 0.9003 (90.03%) 0.8421 (84.21%)
+  PERFORMANCE    1112 0.7545 (75.45%) 0.6096 (60.96%) 0.5988 (59.88%) 0.5996 (59.96%) 0.7488 (74.88%) 0.6200 (62.00%) 0.6204 (62.04%) 0.8802 (88.02%) 0.8318 (83.18%)
+  PRICE          1112 0.9029 (90.29%) 0.7352 (73.52%) 0.6947 (69.47%) 0.7114 (71.14%) 0.9004 (90.04%) 0.7407 (74.07%) 0.7410 (74.10%) 0.9425 (94.25%) 0.8692 (86.92%)
+  SCREEN         1112 0.9317 (93.17%) 0.5527 (55.27%) 0.5847 (58.47%) 0.5669 (56.69%) 0.9284 (92.84%) 0.6614 (66.14%) 0.6618 (66.18%) 0.9312 (93.12%) 0.7541 (75.41%)
+  SER&ACC        1112 0.8741 (87.41%) 0.5621 (56.21%) 0.5466 (54.66%) 0.5537 (55.37%) 0.8690 (86.90%) 0.6851 (68.51%) 0.6867 (68.67%) 0.8544 (85.44%) 0.7927 (79.27%)
+  STORAGE        1112 0.9865 (98.65%) 0.4350 (43.50%) 0.3173 (31.73%) 0.3483 (34.83%) 0.9846 (98.46%) 0.2812 (28.12%) 0.2986 (29.86%) 0.9881 (98.81%) 0.2857 (28.57%)
+
+  --- Độ đo mức khía cạnh / tập khía cạnh / xếp hạng ---
+  Exact match (all 10 aspects correct)            : 0.2896 (28.96%)
+  Hamming loss (4-class)                          : 0.1246 (12.46%)
+  Hamming loss (mention)                          : 0.0919 (9.19%)
+  Subset accuracy (aspect set)                    : 0.4002 (40.02%)
+  Mention precision (micro)                       : 0.8538 (85.38%)
+  Mention recall (micro)                          : 0.8347 (83.47%)
+  Mention F1 (micro) = ACD F1                     : 0.8442 (84.42%)
+  Mention F1 (macro)                              : 0.7764 (77.64%)
+  Mention F1 (weighted)                           : 0.8435 (84.35%)
+  Set precision (mean per review)                 : 0.8385 (83.85%)
+  Set recall (mean per review)                    : 0.8322 (83.22%)
+  Set F1 (mean per review)                        : 0.8090 (80.90%)
+  Aspect-set IoU / Jaccard (mean)                 : 0.7344 (73.44%)
+  Aspect-set IoU / Jaccard (std)                  : 0.2777 (27.77%)
+  mAP aspect detection (macro over aspects)       : 0.8533 (85.33%)
+  mAP aspect detection (micro)                    : 0.9167 (91.67%)
+  mAP@k inside each review:
+    mAP@1  : 0.9269 (92.69%)
+    mAP@3  : 1.0927
+    mAP@5  : 1.4126
+    mAP@10 : 2.0455
+  CMC@k (aspect-detection ranking):
+      k     Recall@k        Hit@k    All-aspects@k
+     @1 0.3795 (37.95%) 0.9269 (92.69%)  0.1069 (10.69%)
+     @2 0.6539 (65.39%) 0.9808 (98.08%)  0.2998 (29.98%)
+     @3 0.8269 (82.69%) 0.9945 (99.45%)  0.5448 (54.48%)
+     @4 0.9153 (91.53%) 0.9963 (99.63%)  0.7221 (72.21%)
+     @5 0.9632 (96.32%) 0.9991 (99.91%)  0.8528 (85.28%)
+     @6 0.9854 (98.54%) 1.0000 (100.00%)  0.9369 (93.69%)
+     @7 0.9937 (99.37%) 1.0000 (100.00%)  0.9726 (97.26%)
+     @8 0.9974 (99.74%) 1.0000 (100.00%)  0.9872 (98.72%)
+     @9 0.9998 (99.98%) 1.0000 (100.00%)  0.9991 (99.91%)
+    @10 1.0000 (100.00%) 1.0000 (100.00%) 1.0000 (100.00%)
+
+  --- Confusion matrix 4x4 (toàn bộ cặp đánh giá × khía cạnh) ---
+                    None  Negative   Neutral  Positive
+  None              7330       213        31       230
+  Negative           218       702        32        59
+  Neutral             71        65       156        89
+  Positive           259        67        51      1547
+
+  --- Confusion matrix ACD: None vs Mention ---
+                    None   Mention
+  None              7330       474
+  Mention            548      2768
+
+====================================================================================================
+8. KẾT QUẢ TRÊN TẬP TEST
+====================================================================================================
+  Số đánh giá                       : 2224
+  Số cặp (đánh giá × khía cạnh)     : 22240
+
+  --- Độ đo phân loại tổng hợp (flatten toàn bộ 10 head) ---
+  Accuracy                                  : 0.8728 (87.28%)
+  Balanced accuracy                         : 0.7125 (71.25%)
+  Precision (micro)                         : 0.8728 (87.28%)
+  Recall (micro)                            : 0.8728 (87.28%)
+  F1 (micro)                                : 0.8728 (87.28%)
+  Precision (macro)                         : 0.7502 (75.02%)
+  Recall (macro)                            : 0.7125 (71.25%)
+  F1 (macro)                                : 0.7279 (72.79%)
+  Precision (weighted)                      : 0.8692 (86.92%)
+  Recall (weighted)                         : 0.8728 (87.28%)
+  F1 (weighted)                             : 0.8704 (87.04%)
+  Cohen's kappa (linear)                    : 0.7275 (72.75%)
+  Cohen's kappa (quadratic)                 : 0.7890 (78.90%)
+  Matthews correlation coefficient          : 0.7278 (72.78%)
+  ROC-AUC OVR (macro)                       : 0.9447 (94.47%)
+  ROC-AUC OVR (micro)                       : 0.9734 (97.34%)
+  ROC-AUC OVR (weighted)                    : 0.9584 (95.84%)
+  PR-AUC / AP (macro)                       : 0.7679 (76.79%)
+  PR-AUC / AP (micro)                       : 0.9379 (93.79%)
+  Log loss                                  : 0.7064 (70.64%)
+  Brier score (multi-class)                 : 0.3469 (34.69%)
+  Expected calibration error (10 bins)      : 0.3317 (33.17%)
+  Top-2 accuracy                            : 0.9593 (95.93%)
+  Top-3 accuracy                            : 0.9868 (98.68%)
+  ASC precision (macro, labels 1..3)        : 0.6920 (69.20%)
+  ASC recall (macro, labels 1..3)           : 0.6366 (63.66%)
+  ASC F1 (macro, labels 1..3)               : 0.6597 (65.97%)
+  ACD precision (mention vs None)           : 0.8563 (85.63%)
+  ACD recall (mention vs None)              : 0.8233 (82.33%)
+  ACD F1 (mention vs None)                  : 0.8394 (83.94%)
+
+  --- Độ đo theo từng lớp cảm xúc ---
+  Class          Support  Precision    Recall        F1   AUC-OVR    AP-OVR
+  -------------------------------------------------------------------------
+  None             15518 0.9247 (92.47%) 0.9401 (94.01%) 0.9324 (93.24%) 0.9621 (96.21%) 0.9824 (98.24%)
+  Negative          2210 0.6930 (69.30%) 0.7059 (70.59%) 0.6994 (69.94%) 0.9477 (94.77%) 0.7336 (73.36%)
+  Neutral            817 0.5771 (57.71%) 0.4125 (41.25%) 0.4811 (48.11%) 0.9087 (90.87%) 0.4945 (49.45%)
+  Positive          3695 0.8060 (80.60%) 0.7913 (79.13%) 0.7986 (79.86%) 0.9603 (96.03%) 0.8611 (86.11%)
+
+  --- Độ đo theo từng khía cạnh ---
+  Aspect            N      Acc   MacroP   MacroR  MacroF1  WeightF1    Kappa      MCC      AUC   ACD-F1
+  -----------------------------------------------------------------------------------------------------
+  BATTERY        2224 0.8763 (87.63%) 0.7408 (74.08%) 0.7061 (70.61%) 0.7184 (71.84%) 0.8702 (87.02%) 0.7946 (79.46%) 0.7954 (79.54%) 0.9381 (93.81%) 0.9316 (93.16%)
+  CAMERA         2224 0.9128 (91.28%) 0.7491 (74.91%) 0.7340 (73.40%) 0.7412 (74.12%) 0.9117 (91.17%) 0.7942 (79.42%) 0.7943 (79.43%) 0.9572 (95.72%) 0.9089 (90.89%)
+  DESIGN         2224 0.9011 (90.11%) 0.6306 (63.06%) 0.5241 (52.41%) 0.5470 (54.70%) 0.8916 (89.16%) 0.6569 (65.69%) 0.6600 (66.00%) 0.9209 (92.09%) 0.7459 (74.59%)
+  FEATURES       2224 0.8381 (83.81%) 0.5992 (59.92%) 0.5851 (58.51%) 0.5880 (58.80%) 0.8323 (83.23%) 0.6628 (66.28%) 0.6632 (66.32%) 0.8991 (89.91%) 0.8079 (80.79%)
+  GENERAL        2224 0.7437 (74.37%) 0.6466 (64.66%) 0.6500 (65.00%) 0.6466 (64.66%) 0.7438 (74.38%) 0.5984 (59.84%) 0.5987 (59.87%) 0.8950 (89.50%) 0.8227 (82.27%)
+  PERFORMANCE    2224 0.7851 (78.51%) 0.6937 (69.37%) 0.6498 (64.98%) 0.6582 (65.82%) 0.7769 (77.69%) 0.6693 (66.93%) 0.6701 (67.01%) 0.9036 (90.36%) 0.8491 (84.91%)
+  PRICE          2224 0.8799 (87.99%) 0.7318 (73.18%) 0.7150 (71.50%) 0.7232 (72.32%) 0.8785 (87.85%) 0.7078 (70.78%) 0.7081 (70.81%) 0.9369 (93.69%) 0.8392 (83.92%)
+  SCREEN         2224 0.9245 (92.45%) 0.5615 (56.15%) 0.5795 (57.95%) 0.5702 (57.02%) 0.9222 (92.22%) 0.6567 (65.67%) 0.6568 (65.68%) 0.9265 (92.65%) 0.7374 (73.74%)
+  SER&ACC        2224 0.8750 (87.50%) 0.5798 (57.98%) 0.5553 (55.53%) 0.5665 (56.65%) 0.8680 (86.80%) 0.6895 (68.95%) 0.6920 (69.20%) 0.9217 (92.17%) 0.7881 (78.81%)
+  STORAGE        2224 0.9910 (99.10%) 0.6924 (69.24%) 0.3888 (38.88%) 0.4500 (45.00%) 0.9886 (98.86%) 0.4566 (45.66%) 0.5147 (51.47%) 0.9895 (98.95%) 0.4865 (48.65%)
+
+  --- Độ đo mức khía cạnh / tập khía cạnh / xếp hạng ---
+  Exact match (all 10 aspects correct)            : 0.2945 (29.45%)
+  Hamming loss (4-class)                          : 0.1272 (12.72%)
+  Hamming loss (mention)                          : 0.0952 (9.52%)
+  Subset accuracy (aspect set)                    : 0.4006 (40.06%)
+  Mention precision (micro)                       : 0.8563 (85.63%)
+  Mention recall (micro)                          : 0.8233 (82.33%)
+  Mention F1 (micro) = ACD F1                     : 0.8394 (83.94%)
+  Mention F1 (macro)                              : 0.7917 (79.17%)
+  Mention F1 (weighted)                           : 0.8388 (83.88%)
+  Set precision (mean per review)                 : 0.8472 (84.72%)
+  Set recall (mean per review)                    : 0.8264 (82.64%)
+  Set F1 (mean per review)                        : 0.8070 (80.70%)
+  Aspect-set IoU / Jaccard (mean)                 : 0.7304 (73.04%)
+  Aspect-set IoU / Jaccard (std)                  : 0.2775 (27.75%)
+  mAP aspect detection (macro over aspects)       : 0.8792 (87.92%)
+  mAP aspect detection (micro)                    : 0.9181 (91.81%)
+  mAP@k inside each review:
+    mAP@1  : 0.9410 (94.10%)
+    mAP@3  : 1.0955
+    mAP@5  : 1.4086
+    mAP@10 : 2.0392
+  CMC@k (aspect-detection ranking):
+      k     Recall@k        Hit@k    All-aspects@k
+     @1 0.3841 (38.41%) 0.9410 (94.10%)  0.1065 (10.65%)
+     @2 0.6465 (64.65%) 0.9835 (98.35%)  0.2968 (29.68%)
+     @3 0.8128 (81.28%) 0.9931 (99.31%)  0.5075 (50.75%)
+     @4 0.9099 (90.99%) 0.9968 (99.68%)  0.7060 (70.60%)
+     @5 0.9602 (96.02%) 0.9986 (99.86%)  0.8477 (84.77%)
+     @6 0.9828 (98.28%) 0.9991 (99.91%)  0.9296 (92.96%)
+     @7 0.9935 (99.35%) 0.9995 (99.95%)  0.9717 (97.17%)
+     @8 0.9971 (99.71%) 0.9995 (99.95%)  0.9877 (98.77%)
+     @9 0.9990 (99.90%) 0.9995 (99.95%)  0.9968 (99.68%)
+    @10 1.0000 (100.00%) 1.0000 (100.00%) 1.0000 (100.00%)
+
+  --- Confusion matrix 4x4 (toàn bộ cặp đánh giá × khía cạnh) ---
+                    None  Negative   Neutral  Positive
+  None             14589       438        82       409
+  Negative           471      1560        66       113
+  Neutral            156       142       337       182
+  Positive           561       111        99      2924
+
+  --- Confusion matrix ACD: None vs Mention ---
+                    None   Mention
+  None             14589       929
+  Mention           1188      5534
+
+====================================================================================================
+9. LOSS / ACCURACY QUA TỪNG EPOCH
+====================================================================================================
+  Không áp dụng: mô hình này không huấn luyện theo epoch (closed-form,
+  batch hoặc ensemble).  Chỉ báo cáo kết quả cuối cùng.  Các mô hình có
+  đường cong epoch là sgd_log và mlp.
+
+====================================================================================================
+10. ARTIFACTS (ĐƯỜNG DẪN FILE KẾT QUẢ)
+====================================================================================================
+  RESULTS.txt                       : D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\results\cli_experiments_5seed\robustness_5seed\ridge\seed_42\RESULTS.txt
+  config.json                       : D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\results\cli_experiments_5seed\robustness_5seed\ridge\seed_42\config.json
+  environment.json                  : D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\results\cli_experiments_5seed\robustness_5seed\ridge\seed_42\environment.json
+  train_log.csv                     : D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\results\cli_experiments_5seed\robustness_5seed\ridge\seed_42\train_log.csv
+  train.metrics                     : D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\results\cli_experiments_5seed\robustness_5seed\ridge\seed_42\metrics_train.json
+  train.per_class                   : D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\results\cli_experiments_5seed\robustness_5seed\ridge\seed_42\per_class_train.csv
+  train.per_aspect                  : D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\results\cli_experiments_5seed\robustness_5seed\ridge\seed_42\per_aspect_train.csv
+  train.aspect_detection            : D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\results\cli_experiments_5seed\robustness_5seed\ridge\seed_42\aspect_detection_train.csv
+  train.confusion_matrix            : D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\results\cli_experiments_5seed\robustness_5seed\ridge\seed_42\confusion_matrix_train.csv
+  train.confusion_matrix_acd        : D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\results\cli_experiments_5seed\robustness_5seed\ridge\seed_42\confusion_matrix_acd_train.csv
+  train.confusion_matrix_per_aspect : D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\results\cli_experiments_5seed\robustness_5seed\ridge\seed_42\confusion_matrix_per_aspect_train.csv
+  train.predictions                 : D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\results\cli_experiments_5seed\robustness_5seed\ridge\seed_42\predictions_train.csv
+  train.probabilities               : D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\results\cli_experiments_5seed\robustness_5seed\ridge\seed_42\probabilities_train.npz
+  dev.metrics                       : D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\results\cli_experiments_5seed\robustness_5seed\ridge\seed_42\metrics_dev.json
+  dev.per_class                     : D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\results\cli_experiments_5seed\robustness_5seed\ridge\seed_42\per_class_dev.csv
+  dev.per_aspect                    : D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\results\cli_experiments_5seed\robustness_5seed\ridge\seed_42\per_aspect_dev.csv
+  dev.aspect_detection              : D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\results\cli_experiments_5seed\robustness_5seed\ridge\seed_42\aspect_detection_dev.csv
+  dev.confusion_matrix              : D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\results\cli_experiments_5seed\robustness_5seed\ridge\seed_42\confusion_matrix_dev.csv
+  dev.confusion_matrix_acd          : D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\results\cli_experiments_5seed\robustness_5seed\ridge\seed_42\confusion_matrix_acd_dev.csv
+  dev.confusion_matrix_per_aspect   : D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\results\cli_experiments_5seed\robustness_5seed\ridge\seed_42\confusion_matrix_per_aspect_dev.csv
+  dev.predictions                   : D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\results\cli_experiments_5seed\robustness_5seed\ridge\seed_42\predictions_dev.csv
+  dev.probabilities                 : D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\results\cli_experiments_5seed\robustness_5seed\ridge\seed_42\probabilities_dev.npz
+  test.metrics                      : D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\results\cli_experiments_5seed\robustness_5seed\ridge\seed_42\metrics_test.json
+  test.per_class                    : D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\results\cli_experiments_5seed\robustness_5seed\ridge\seed_42\per_class_test.csv
+  test.per_aspect                   : D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\results\cli_experiments_5seed\robustness_5seed\ridge\seed_42\per_aspect_test.csv
+  test.aspect_detection             : D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\results\cli_experiments_5seed\robustness_5seed\ridge\seed_42\aspect_detection_test.csv
+  test.confusion_matrix             : D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\results\cli_experiments_5seed\robustness_5seed\ridge\seed_42\confusion_matrix_test.csv
+  test.confusion_matrix_acd         : D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\results\cli_experiments_5seed\robustness_5seed\ridge\seed_42\confusion_matrix_acd_test.csv
+  test.confusion_matrix_per_aspect  : D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\results\cli_experiments_5seed\robustness_5seed\ridge\seed_42\confusion_matrix_per_aspect_test.csv
+  test.predictions                  : D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\results\cli_experiments_5seed\robustness_5seed\ridge\seed_42\predictions_test.csv
+  test.probabilities                : D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\results\cli_experiments_5seed\robustness_5seed\ridge\seed_42\probabilities_test.npz
+  figure.confusion_matrix_test      : D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\results\cli_experiments_5seed\robustness_5seed\ridge\seed_42\figures\confusion_matrix_test.png
+  figure.per_aspect_macro_f1_test   : D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\results\cli_experiments_5seed\robustness_5seed\ridge\seed_42\figures\per_aspect_macro_f1_test.png
+  figure.per_class_f1_test          : D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\results\cli_experiments_5seed\robustness_5seed\ridge\seed_42\figures\per_class_f1_test.png
+  figure.roc_curves_test            : D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\results\cli_experiments_5seed\robustness_5seed\ridge\seed_42\figures\roc_curves_test.png
+  figure.pr_curves_test             : D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\results\cli_experiments_5seed\robustness_5seed\ridge\seed_42\figures\pr_curves_test.png
+  figure.calibration_test           : D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\results\cli_experiments_5seed\robustness_5seed\ridge\seed_42\figures\calibration_test.png
+  figure.confidence_hist_test       : D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\results\cli_experiments_5seed\robustness_5seed\ridge\seed_42\figures\confidence_hist_test.png
+  figure.cmc_test                   : D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\results\cli_experiments_5seed\robustness_5seed\ridge\seed_42\figures\cmc_test.png
+  figure.aspect_set_iou_hist_test   : D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\results\cli_experiments_5seed\robustness_5seed\ridge\seed_42\figures\aspect_set_iou_hist_test.png
+  figure.aspect_ap_test             : D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\results\cli_experiments_5seed\robustness_5seed\ridge\seed_42\figures\aspect_ap_test.png
+  figure_manifest.csv               : D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\results\cli_experiments_5seed\robustness_5seed\ridge\seed_42\figure_manifest.csv
+
+====================================================================================================
+11. LIÊN KẾT HÌNH/BẢNG ↔ CODE
+====================================================================================================
+  Mỗi hình/bảng dưới đây được tạo bởi hàm trong file code và có thể tái lập
+  bằng đúng lệnh ở mục 1.  Manifest đầy đủ: figure_manifest.csv.
+  - confusion_matrix_test.png                -> plot_confusion()
+      code: D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\src\run_simple_experiments.py
+      data: metrics_test.json / confusion_matrix_test.csv
+  - per_aspect_macro_f1_test.png             -> plot_bar()
+      code: D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\src\run_simple_experiments.py
+      data: per_aspect_test.csv
+  - per_class_f1_test.png                    -> plot_bar()
+      code: D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\src\run_simple_experiments.py
+      data: per_class_test.csv
+  - roc_curves_test.png                      -> plot_roc()
+      code: D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\src\run_simple_experiments.py
+      data: probabilities_test.npz
+  - pr_curves_test.png                       -> plot_pr()
+      code: D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\src\run_simple_experiments.py
+      data: probabilities_test.npz
+  - calibration_test.png                     -> plot_calibration()
+      code: D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\src\run_simple_experiments.py
+      data: probabilities_test.npz
+  - confidence_hist_test.png                 -> plot_confidence_hist()
+      code: D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\src\run_simple_experiments.py
+      data: probabilities_test.npz
+  - cmc_test.png                             -> plot_cmc()
+      code: D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\src\run_simple_experiments.py
+      data: aspect_detection_test.csv
+  - aspect_set_iou_hist_test.png             -> plot_hist()
+      code: D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\src\run_simple_experiments.py
+      data: computed from predictions_test.csv
+  - aspect_ap_test.png                       -> plot_bar()
+      code: D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\src\run_simple_experiments.py
+      data: aspect_detection_test.csv
+
+====================================================================================================
+12. GHI CHÚ VỀ ĐỘ ĐO VÀ GIỚI HẠN
+====================================================================================================
+  * Accuracy/F1 micro/macro/weighted, Cohen's kappa (linear & quadratic),
+    MCC, ROC-AUC OVR, PR-AUC/AP, log loss, Brier, ECE, top-2/top-3,
+    confusion matrix: tính trực tiếp từ dự đoán 10 head.
+  * ACD F1: mention (label 1..3) vs None (label 0).
+  * ASC macro F1: chỉ tính trên các lớp 1..3 (bỏ None).
+  * Exact match: cả 10 khía cạnh đều đúng nhãn.
+  * Aspect-set IoU: Jaccard giữa tập khía cạnh thật và tập dự đoán của
+    từng đánh giá; đây là cách diễn giải IoU phù hợp cho ABSA, không phải
+    IoU phân đoạn ảnh.
+  * CMC@k: tỉ lệ khía cạnh thật được xếp trong top-k khía cạnh theo
+    mention score = 1 - P(None); đây là CMC xếp hạng khía cạnh, không phải
+    CMC nhận dạng khuôn mặt.
+  * mAP: average precision của phát hiện khía cạnh nhị phân; mAP@k là AP@k
+    trong từng đánh giá.
+  * Các độ đo ẩn tin (PSNR, SSIM, BER, capacity, robustness) KHÔNG áp dụng
+    vì bài toán không có ảnh bìa / payload nhúng.  Không tạo số liệu giả.
+  * Mô hình đơn giản chỉ dùng TF-IDF; không dùng checkpoint PhoBERT.
+    Kết quả PhoBERT trong báo cáo so sánh là kết quả đã chạy trước đó,
+    không trộn với lần chạy này.
+
+====================================================================================================
+13. LỆNH TÁI LẬP
+====================================================================================================
+  C:\Users\admin\AppData\Local\Python\pythoncore-3.14-64\python.exe ABSA_Project\src\run_simple_experiments.py --models default --seeds 42 123 2024 7 777 --tag robustness_5seed --output-dir ABSA_Project\results\cli_experiments_5seed
+
+  Hoặc chạy lại đúng một mô hình:
+  C:\Users\admin\AppData\Local\Python\pythoncore-3.14-64\python.exe D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\src\run_simple_experiments.py --models ridge --seeds 42 --tag robustness_5seed --force

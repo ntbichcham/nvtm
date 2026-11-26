@@ -1,0 +1,68 @@
+{
+  "experiment_name": "bilstm_rand_seed777",
+  "model": "BiLSTM (from scratch)",
+  "seed": 777,
+  "best_epoch": 10,
+  "best_dev_macro_f1": 0.750760039181872,
+  "test_loss": 6.106841135025024,
+  "test_micro_precision": 0.8798561151079136,
+  "test_micro_recall": 0.8798561151079136,
+  "test_micro_f1": 0.8798561151079136,
+  "test_macro_precision": 0.7491446902561005,
+  "test_macro_recall": 0.7376946876446628,
+  "test_macro_f1": 0.7429890006016493,
+  "test_weighted_f1": 0.8792070069072985,
+  "test_sentiment_macro_f1": 0.6779103986520069,
+  "test_acd_f1": 0.855965845255037,
+  "test_exact_match": 0.3277877697841727,
+  "test_per_class": {
+    "None": {
+      "precision": 0.9354301454102876,
+      "recall": 0.9410362160072174,
+      "f1": 0.9382248064505766,
+      "support": 15518
+    },
+    "Negative": {
+      "precision": 0.6924428822495606,
+      "recall": 0.7131221719457014,
+      "f1": 0.7026304057066429,
+      "support": 2210
+    },
+    "Neutral": {
+      "precision": 0.5422343324250681,
+      "recall": 0.48714810281517745,
+      "f1": 0.513217279174726,
+      "support": 817
+    },
+    "Positive": {
+      "precision": 0.826471400939486,
+      "recall": 0.8094722598105548,
+      "f1": 0.8178835110746514,
+      "support": 3695
+    }
+  },
+  "per_aspect_test_f1": {
+    "BATTERY": 0.7482024581337572,
+    "CAMERA": 0.775978624196412,
+    "DESIGN": 0.6542091170879688,
+    "FEATURES": 0.6852131705776516,
+    "GENERAL": 0.6643007369128401,
+    "PERFORMANCE": 0.6837401216930078,
+    "PRICE": 0.709947810903286,
+    "SCREEN": 0.6493078842586697,
+    "SER&ACC": 0.5756878353962732,
+    "STORAGE": 0.38630546075085326
+  },
+  "total_parameters": 3950889,
+  "vocab_size": 5079,
+  "max_len": 128,
+  "batch_size": 32,
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "dropout": 0.3,
+  "epochs": 20,
+  "total_train_time_sec": 182.0042929649353,
+  "peak_vram_mb": 3199.642578125,
+  "latency_per_sample_ms": 0.5163491007171759,
+  "throughput_samples_sec": 1936.674235727464
+}

@@ -1,0 +1,81 @@
+==========================================================================================
+PHÂN TÍCH DỮ LIỆU UIT-ViSFD — HISTOGRAM / DISTRIBUTION
+==========================================================================================
+Thời điểm: 2026-11-14T20:11:46+07:00
+Lệnh: D:\conda_envs\vicloabsa_gpu\python.exe D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\src\analyze_dataset_histograms.py --output-dir D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\results\dataset_histograms
+Thư mục dữ liệu: D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\data\processed\UIT-ViSFD\prepared_for_model
+Thư mục kết quả: D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\results\dataset_histograms
+
+Cột văn bản: comment_segmented
+Cột nhãn: label
+Thứ tự khía cạnh cố định: BATTERY, CAMERA, DESIGN, FEATURES, GENERAL, PERFORMANCE, PRICE, SCREEN, SER&ACC, STORAGE
+Thứ tự nhãn cố định: None, Negative, Neutral, Positive
+
+[train] rows=7786
+  label counts: None=53988, Negative=7464, Neutral=2903, Positive=13505
+  aspect mentions: BATTERY=3604, CAMERA=2146, DESIGN=1378, FEATURES=2642, GENERAL=4866, PERFORMANCE=4140, PRICE=2061, SCREEN=949, SER&ACC=1995, STORAGE=91
+  aspects/review: mean=3.066, median=3, max=9
+  token length: mean=41.61, median=34, max=278
+
+[dev] rows=1112
+  label counts: None=7804, Negative=1011, Neutral=381, Positive=1924
+  aspect mentions: BATTERY=504, CAMERA=296, DESIGN=187, FEATURES=381, GENERAL=689, PERFORMANCE=582, PRICE=252, SCREEN=121, SER&ACC=290, STORAGE=14
+  aspects/review: mean=2.982, median=3, max=7
+  token length: mean=40.42, median=33, max=245
+
+[test] rows=2224
+  label counts: None=15518, Negative=2210, Neutral=817, Positive=3695
+  aspect mentions: BATTERY=1014, CAMERA=588, DESIGN=398, FEATURES=711, GENERAL=1381, PERFORMANCE=1172, PRICE=569, SCREEN=269, SER&ACC=593, STORAGE=27
+  aspects/review: mean=3.022, median=3, max=9
+  token length: mean=41.68, median=34, max=302
+
+DANH MỤC HÌNH VÀ CSV:
+  - split_size_bar.png                         -> main()
+      code: D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\src\analyze_dataset_histograms.py
+      data: Train/Dev/Test CSV
+      sha256: d70eb56dd8f4507520a73d7208fedebdbe8833a26fff814dcb78de5b8977ae86
+  - aspect_mention_counts_by_split.png         -> main()
+      code: D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\src\analyze_dataset_histograms.py
+      data: aspect_mention_counts_by_split.csv
+      sha256: 0dc8686c66ce33380e4cc9497fd85defda78e05a727e80d279a463c1627fb3e0
+  - aspect_mention_rate_heatmap.png            -> main()
+      code: D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\src\analyze_dataset_histograms.py
+      data: aspect_mention_counts_by_split.csv
+      sha256: c9353346d1d114aabce3bec6ee3d395912e1c020f61cd7fdc91fa98ec9230962
+  - sentiment_distribution_by_split.png        -> main()
+      code: D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\src\analyze_dataset_histograms.py
+      data: sentiment_distribution_by_split.csv
+      sha256: 15730c5641e5f02cf33f4cd13d86e147062c9b3ef85df84f92f29cf0ddcaae7a
+  - label_per_aspect_heatmap_train.png         -> main()
+      code: D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\src\analyze_dataset_histograms.py
+      data: label_per_aspect_heatmap_train.csv
+      sha256: 8d14b10f0e49ce63589c7c05a36a1678237b22b7a62d8b257f0aa5c5f45d8b05
+  - sentiment_per_aspect_train.png             -> main()
+      code: D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\src\analyze_dataset_histograms.py
+      data: label_per_aspect_heatmap_train.csv
+      sha256: be86698041c075f7ac68a910a53bfbe74e84e0c01af505f5b9fb8938ddcefb9f
+  - aspect_count_per_review_hist.png           -> main()
+      code: D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\src\analyze_dataset_histograms.py
+      data: aspect_count_per_review_hist.csv
+      sha256: 6055161c3470688b85e6ad26511f4b0695c278fd1af79f8f9151ea5d581012ba
+  - token_length_hist.png                      -> main()
+      code: D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\src\analyze_dataset_histograms.py
+      data: token_length_hist.csv
+      sha256: 9fc5fb2b3204bf33b36534380e8b18e160b34a8471827c0a1f061f0177d7b5e0
+  - character_length_hist.png                  -> main()
+      code: D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\src\analyze_dataset_histograms.py
+      data: character_length_hist.csv
+      sha256: f29b9d242694736f4927710717839095e35a5b23e2006dddde0b69fff5670405
+  - aspect_cooccurrence_heatmap_train.png      -> main()
+      code: D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\src\analyze_dataset_histograms.py
+      data: aspect_cooccurrence_jaccard_train.csv
+      sha256: a63cb8e81087373c206a3e7894ccb13ec78ebbaf85f7988121fac0b92157c8e4
+  - monthly_volume.png                         -> main()
+      code: D:\Ct255-NVTM(BI)\nhom2\ABSA_Project\src\analyze_dataset_histograms.py
+      data: monthly_volume.csv
+      sha256: 1b21a94aa4d770ee98705b86767607b7f2a6e8c83652448396dccbd229466bbf
+
+GHI CHÚ:
+  * Mỗi hình đều có file CSV cùng tên chứa số liệu gốc.
+  * Histogram/heatmap chỉ mô tả dữ liệu, không phải kết quả mô hình.
+  * Các độ đo ẩn tin (PSNR/SSIM/BER) không áp dụng cho dữ liệu văn bản ABSA.
