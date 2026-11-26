@@ -1,0 +1,21 @@
+﻿=== BẢNG 1: TỔNG HỢP HIỆU NĂNG CÁC MÔ HÌNH (MEAN ± STD QUA 3 SEEDS) ===
+Mo_Hinh,So_Run,Micro_F1_Pct,Macro_F1_4class_Pct,ASC_Macro_F1_Pct,ACD_F1_Pct,Exact_Match_Pct,Best_Epoch_TB
+Bi-LSTM + fastText,3,88.24 ± 0.33,75.37 ± 0.60,69.14 ± 0.75,86.53 ± 0.16,33.32 ± 0.80,10.67
+Multi-Head PhoBERT 5 epochs,3,90.50 ± 0.15,78.37 ± 0.35,72.71 ± 0.46,89.50 ± 0.14,41.91 ± 0.46,5.00
+Multi-Head PhoBERT 10 epochs,3,91.58 ± 0.10,81.07 ± 0.19,76.15 ± 0.25,90.50 ± 0.06,46.18 ± 0.77,9.33
+Multi-Head PhoBERT ES 20/3 (Early Stopping),3,91.79 ± 0.11,81.68 ± 0.11,76.95 ± 0.14,90.71 ± 0.19,46.79 ± 0.86,12.00
+BiLSTM Random Embedding (Tham khao),3,88.21 ± 0.36,74.87 ± 0.68,68.53 ± 0.84,85.92 ± 0.36,32.90 ± 1.41,12.00
+
+"=== BẢNG 2: CHI TIẾT THỰC NGHIỆM EARLY STOPPING (PHOBERT ES20, PATIENCE = 3) ==="
+Experiment,Seed,Max_Epochs,Patience,Last_Epoch,Best_Epoch,Gap_Epochs,Stopped_Early,Best_Dev_Macro_F1,Test_Macro_F1,Test_ACD_F1,Test_Exact_Match
+phobert_es20_seed42,42,20,3,12,9,3,True,0.8109,0.8155,0.9059,0.4685
+phobert_es20_seed123,123,20,3,19,16,3,True,0.8123,0.8176,0.9060,0.4591
+phobert_es20_seed2024,2024,20,3,14,11,3,True,0.8121,0.8172,0.9092,0.4762
+Trung_Binh,All,20,3,15.00 ± 3.61,12.00 ± 3.61,3.00,100%,0.8118 ± 0.0008,0.8168 ± 0.0011,0.9071 ± 0.0019,0.4679 ± 0.0086
+
+=== BẢNG 3: CHI TIẾT CÁC LẦN CHẠY BI-LSTM + FASTTEXT ===
+Experiment,Seed,Max_Epochs,Patience,Last_Epoch,Best_Epoch,Gap_Epochs,Stopped_Early,Best_Dev_Macro_F1,Test_Macro_F1,Test_ACD_F1,Test_Exact_Match
+bilstm_ft_seed42,42,20,3,11,8,3,True,0.7429,0.7482,0.8653,0.3269
+bilstm_ft_seed123,123,20,3,17,14,3,True,0.7509,0.7602,0.8669,0.3422
+bilstm_ft_seed2024,2024,20,3,13,10,3,True,0.7495,0.7526,0.8637,0.3305
+Trung_Binh,All,20,3,13.67 ± 3.06,10.67 ± 3.06,3.00,100%,0.7478 ± 0.0043,0.7537 ± 0.0060,0.8653 ± 0.0016,0.3332 ± 0.0080

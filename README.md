@@ -1,212 +1,165 @@
-# ABSA UIT-ViSFD - PhoBERT vs BiLSTM
+<div align="center">
 
-Mã nguồn và artifact tái lập cho đề tài **Phân tích cảm xúc dựa trên khía cạnh
-(Aspect-Based Sentiment Analysis) cho bình luận điện thoại tiếng Việt trên bộ
-UIT-ViSFD**, sử dụng PhoBERT làm mô hình chính và BiLSTM đa đầu làm baseline.
+# 📱 Vietnamese Aspect-Based Sentiment Analysis (UIT-ViSFD)
 
-Kho lưu trữ phục vụ Chương 4 của báo cáo: mọi con số trong báo cáo đều được
-sinh lại từ cùng một split, cùng nhãn, cùng class weights và cùng hàm tính
-độ đo.
+**Phân tích cảm xúc theo khía cạnh cho bình luận điện thoại tiếng Việt — PhoBERT, BiLSTM+fastText & 14 Mô hình Baseline**
 
-## 1. Cấu trúc
+[![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python&logoColor=white)](https://www.python.org/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.x-EE4C2C?logo=pytorch&logoColor=white)](https://pytorch.org/)
+[![HuggingFace](https://img.shields.io/badge/PhoBERT-vinai%2Fphobert--base-FFD21E?logo=huggingface&logoColor=black)](https://huggingface.co/vinai/phobert-base)
+[![Dataset](https://img.shields.io/badge/Dataset-UIT--ViSFD-green)](#1-tổng-quan-dữ-liệu)
+[![Course](https://img.shields.io/badge/CT255-NVTM%20(BI)-purple)](#)
 
+</div>
+
+---
+
+Kho lưu trữ mã nguồn, dữ liệu đã tiền xử lý, kết quả thực nghiệm (multi-seed) và ứng dụng web minh họa (**Brand Health Intelligence**) cho đề tài học phần **CT255 — Nghiệp vụ thông minh (Business Intelligence)**. Mọi số liệu báo cáo đều có khả năng tái lập trên cùng một bộ chia `Train / Dev / Test` (`7.786 / 1.112 / 2.224` bình luận), cùng quy ước nhãn và cùng hàm đánh giá thống nhất.
+
+---
+
+## 📁 1. Cấu trúc thư mục
+
+```text
+nhom2/
+├── ABSA_Project/                        # Hệ thống lõi huấn luyện, đánh giá & thực nghiệm
+│   ├── configs/                         # Cấu hình tiền xử lý & quy tắc teencode
+│   │   ├── preprocessing.yaml
+│   │   └── teencode_rules.csv
+│   ├── data/
+│   │   ├── original/UIT-ViSFD/          # Dữ liệu gốc (Train.csv, Dev.csv, Test.csv)
+│   │   ├── processed/UIT-ViSFD/         # Dữ liệu tách từ VnCoreNLP & prepared_for_model/
+│   │   └── literature_baselines.csv     # Bảng tổng hợp kết quả từ các nghiên cứu liên quan
+│   ├── figures/                         # Biểu đồ EDA, sơ đồ kiến trúc & hình kết quả báo cáo
+│   ├── models/                          # Trọng số mô hình (.pt) — bỏ qua trên Git (>1.5 GB/file)
+│   ├── results/                         # Kết quả đánh giá, thống kê, multi-seed & báo cáo
+│   │   ├── cli_experiments/             # Thực nghiệm 14 mô hình cơ sở (3-seed)
+│   │   ├── cli_experiments_5seed/       # Thực nghiệm robustness (5-seed)
+│   │   ├── experiments_2026/            # Kết quả PhoBERT & BiLSTM+fastText
+│   │   ├── experiments_5seed/           # Đánh giá ổn định 5-seed cho Deep Learning
+│   │   ├── dataset_histograms/          # Thống kê phân bố dữ liệu
+│   │   ├── report_assets/               # Bảng so sánh & manifest hình ↔ code
+│   │   └── statistics/                  # Báo cáo thống kê kiểm định dữ liệu
+│   ├── src/                             # Mã nguồn huấn luyện, đánh giá & trực quan hóa
+│   └── tests/                           # Unit tests kiểm chứng hàm tính độ đo
+├── brand_health_demo/                   # Ứng dụng Web Demo (PHP + Python FastAPI API)
+├── docs/                                # Tài liệu dự án được tổ chức gọn gàng
+│   ├── papers/                          # Các bài báo tham khảo (PhoBERT, ViSoBERT, SA2SL...)
+│   ├── references/                      # Bảng tổng hợp DOI & so sánh thực nghiệm
+│   └── reports/                         # Báo cáo Word chính thức & báo cáo tiến độ
+├── .gitignore                           # Loại trừ checkpoints (.pt), archives (.zip) & file dự đoán lớn
+├── README.md
+└── requirements.txt
 ```
-ABSA_Project/
-├── configs/
-│   ├── preprocessing.yaml       # đường dẫn, nhãn, tokenizer, segmentation
-│   └── teencode_rules.csv       # bảng teencode mẫu (mặc định tắt)
-├── data/
-│   ├── original/UIT-ViSFD/      # Train.csv, Dev.csv, Test.csv (không sửa)
-│   └── processed/UIT-ViSFD/
-│       ├── *_segmented.csv      # đầu ra VnCoreNLP dùng chung
-│       ├── prepared_for_model/  # *_prepared.csv
-│       └── reproduced/          # bản tái tạo P0
-├── src/
-│   ├── check_dataset.py         # kiểm định chất lượng dữ liệu
-│   ├── preprocess.py            # tiền xử lý tái lập
-│   ├── eda_visualization.py     # 9 hình EDA
-│   ├── dataset_loader.py        # nhãn, dataset, class weights
-│   ├── metrics_utils.py         # độ đo lõi dùng chung
-│   ├── evaluate_absa.py         # đánh giá hợp nhất + xuất dự đoán
-│   ├── train_phobert.py         # huấn luyện PhoBERT
-│   └── train_baseline.py        # huấn luyện BiLSTM
-├── tests/
-│   └── test_metrics.py          # 9 test tính tay cho bộ độ đo
-├── results/
-│   ├── statistics/              # báo cáo TV1 (bản gốc)
-│   ├── statistics/reproduced/   # báo cáo TV1 tái tạo
-│   └── evaluation/              # metrics, per-aspect, predictions, errors
-├── figures/                     # hình báo cáo (bản gốc)
-│   └── reproduced/              # hình EDA tái tạo
-└── models/                      # checkpoint (KHÔNG commit, ~1,6 GB)
-```
 
-## 2. Môi trường
+---
 
-Phiên bản đã kiểm chứng:
+## ⚙️ 2. Cài đặt môi trường
 
-| Gói | Phiên bản |
-|---|---|
-| Python | 3.10.22 |
-| torch | 2.13.0 (CUDA 13.0) |
-| transformers | 4.57.3 |
-| scikit-learn | 1.7.2 |
-| pandas | 2.3.3 |
-| numpy | 2.2.6 |
-| matplotlib | 3.10.9 |
-| seaborn | 0.13.2 |
-| PyYAML | 6.0.3 |
+Môi trường đã kiểm chứng với **Python 3.10+**, **PyTorch 2.x**, **Transformers 4.57+**, **scikit-learn 1.7+**:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-`py_vncorenlp` và Java là **tùy chọn**. Máy không có Java vẫn tái lập được vì
-`preprocess.py` mặc định dùng lại các file `*_segmented.csv` đã phát hành.
+> **Lưu ý:** `py_vncorenlp` và Java là **tùy chọn**. Máy không cài Java vẫn chạy và tái lập đầy đủ vì hệ thống tái sử dụng các file `*_segmented.csv` đã tách từ sẵn.
+> Trên Windows, khuyến nghị thiết lập encoding UTF-8 trước khi chạy:
+> ```powershell
+> $env:PYTHONPATH="$PWD\ABSA_Project\src"
+> $env:PYTHONIOENCODING="utf-8"
+> ```
 
-## 3. Quy ước nhãn
+---
 
-10 khía cạnh, 4 lớp cảm xúc:
+## 🏷️ 3. Quy ước nhãn (UIT-ViSFD)
 
-```
-None=0, Negative=1, Neutral=2, Positive=3
-```
+Bài toán phân loại đồng thời **10 khía cạnh** (`BATTERY`, `CAMERA`, `DESIGN`, `FEATURES`, `GENERAL`, `PERFORMANCE`, `PRICE`, `SCREEN`, `SER&ACC`, `STORAGE`), mỗi khía cạnh gồm **4 lớp cảm xúc**:
 
-Thứ tự khía cạnh và ánh xạ nhãn được import trực tiếp từ
-`dataset_loader.py`, dùng chung cho cả huấn luyện và đánh giá.
+| Nhãn | 0 | 1 | 2 | 3 |
+| :--- | :---: | :---: | :---: | :---: |
+| **Ý nghĩa** | `None` | `Negative` | `Neutral` | `Positive` |
 
-## 4. Tái lập số liệu
+Quy ước ánh xạ nhãn và hàm tính trọng số lớp được quản lý tập trung trong [`ABSA_Project/src/dataset_loader.py`](ABSA_Project/src/dataset_loader.py).
 
-Tất cả lệnh chạy từ thư mục gốc của repo:
+---
 
+## 🚀 4. Hướng dẫn chạy & Tái lập thực nghiệm
+
+Tất cả các lệnh bên dưới được chạy từ thư mục gốc của repository:
+
+### 4.1. Kiểm định dữ liệu & Tiền xử lý
 ```bash
-export PYTHONPATH="$PWD/ABSA_Project/src"
-export PYTHONIOENCODING="utf-8"
-```
+# Kiểm định chất lượng dữ liệu (sinh 19 file CSV thống kê)
+python ABSA_Project/src/check_dataset.py --out-dir ABSA_Project/results/statistics/reproduced
 
-### 4.1. Kiểm định dữ liệu
+# Tiền xử lý & tạo dữ liệu chuẩn hóa đầu vào mô hình
+python ABSA_Project/src/preprocess.py --out-dir ABSA_Project/data/processed/UIT-ViSFD/reproduced
 
-```bash
-python ABSA_Project/src/check_dataset.py \
-  --out-dir ABSA_Project/results/statistics/reproduced
-```
-
-Sinh 19 CSV. Bản tái tạo trùng khớp tuyệt đối với 18 CSV gốc về số dòng,
-thứ tự và giá trị (file `segmentation_report.csv` khác đường dẫn tuyệt đối).
-
-### 4.2. Tiền xử lý
-
-```bash
-python ABSA_Project/src/preprocess.py \
-  --out-dir ABSA_Project/data/processed/UIT-ViSFD/reproduced
-```
-
-Sinh `*_segmented.csv`, `prepared_for_model/*_prepared.csv`,
-`phobert_token_{details,statistics}.csv`, `segmentation_report.csv`,
-`handoff_validation_report.csv`, `handoff_additional_validation.csv`.
-
-`token_length` là độ dài PhoBERT **có** special tokens (`<s>`, `</s>`).
-Kết quả tái tạo trùng khớp tuyệt đối với 3 file prepared gốc.
-
-### 4.3. Hình EDA
-
-```bash
-python ABSA_Project/src/eda_visualization.py \
-  --stats-dir ABSA_Project/results/statistics/reproduced \
-  --out-dir ABSA_Project/figures/reproduced
-```
-
-Sinh 9 hình: phân bố khía cạnh, cảm xúc (số lượng và tỷ lệ), độ dài ký tự,
-đơn vị khoảng trắng, độ dài token PhoBERT, đồng xuất hiện (count và Jaccard),
-phân bố bình luận theo tháng.
-
-### 4.4. Kiểm thử độ đo
-
-```bash
+# Kiểm thử đơn vị cho bộ độ đo (9/9 test PASS)
 python ABSA_Project/tests/test_metrics.py
-# hoặc: pytest ABSA_Project/tests/test_metrics.py -v
 ```
 
-9/9 test PASS. Các giá trị kỳ vọng được tính tay từ vector nhãn 10 khía cạnh.
-
-### 4.5. Huấn luyện
-
-PhoBERT được huấn luyện với `max_len=160`, đánh giá và triển khai với
-`max_len=128`:
-
+### 4.2. Huấn luyện các mô hình Deep Learning
 ```bash
+# Huấn luyện Multi-Head PhoBERT (max_len=160)
 python ABSA_Project/src/train_phobert.py --max_len 160
+
+# Huấn luyện BiLSTM đa đầu (Baseline)
 python ABSA_Project/src/train_baseline.py --max_len 160
+
+# Huấn luyện BiLSTM + fastText Embedding
+python ABSA_Project/src/train_bilstm_fasttext.py
 ```
 
-Baseline dùng cùng `comment_segmented`, cùng split và cùng class weights.
-
-### 4.6. Đánh giá hợp nhất
-
+### 4.3. Đánh giá hợp nhất (Test split)
 ```bash
 python ABSA_Project/src/evaluate_absa.py \
   --model_type phobert \
   --checkpoint ABSA_Project/models/best_phobert_absa.pt \
   --split Test --max_len 128 \
   --prefix phobert_absa_test
-
-python ABSA_Project/src/evaluate_absa.py \
-  --model_type bilstm \
-  --checkpoint ABSA_Project/models/best_bilstm_bilstm_official.pt \
-  --vocab ABSA_Project/models/vocab_bilstm_official.json \
-  --split Test --max_len 128 \
-  --prefix bilstm_absa_test
 ```
 
-Mỗi lần chạy sinh:
-
-- `*_metrics.json`: micro/macro/weighted P/R/F1, ACD macro/micro,
-  sentiment macro/micro, pair F1, per-class, exact match, confusion matrix;
-- `*_per_aspect.csv`: bảng 10 khía cạnh;
-- `*_predictions.csv`: 2.224 dòng x 33 cột (10 `true_`, 10 `pred_`,
-  10 `prob_` và 3 cột định danh);
-- `*_predictions.jsonl`: 2.224 dòng, mỗi dòng là một mẫu;
-- `*_errors.csv`: các ô dự đoán sai;
-- `*_classification_report.txt`: báo cáo sklearn toàn cục và từng khía cạnh.
-
-Thêm `--reference-json` để bật kiểm tra hồi quy:
-
+### 4.4. Chạy thực nghiệm 14 mô hình cơ sở qua CLI (multi-seed)
 ```bash
---reference-json ABSA_Project/results/evaluation/phobert_quality_test.json
+# Xem danh sách 14 mô hình cơ sở (Naive Bayes, SVM, Logistic Regression, MLP, kNN, Trees...)
+python ABSA_Project/src/run_simple_experiments.py --list
+
+# Chạy benchmark đa seed
+python ABSA_Project/src/run_simple_experiments.py \
+  --models default --seeds 42 123 2024 \
+  --tag baselines --output-dir ABSA_Project/results/cli_experiments
 ```
 
-Kết quả hồi quy: `max|delta| = 0.000e+00`, `all_match = True` cho cả hai mô hình.
+---
 
-## 5. Kết quả trên tập Test
+## 📊 5. Kết quả thực nghiệm chính (tập Test)
 
-| Độ đo | PhoBERT | BiLSTM |
-|---|---:|---:|
-| Micro F1 (ô nhãn) | 0,906340 | 0,883543 |
-| Macro F1 (ô nhãn) | 0,787910 | 0,753001 |
-| Sentiment macro F1 | 0,732706 | 0,690904 |
-| Sentiment micro F1 | 0,799736 | 0,753521 |
-| ACD F1 | 0,894995 | 0,858406 |
-| ACD macro F1 | 0,874173 | 0,810588 |
-| Pair micro F1 | 0,969737 | 0,972730 |
-| Pair macro F1 | 0,886182 | 0,883864 |
-| Exact Match | 0,419964 | 0,339478 |
+| Độ đo đánh giá | PhoBERT (Multi-Head) | BiLSTM (Multi-Head) |
+| :--- | :---: | :---: |
+| **Micro F1 (ô nhãn)** | **0.9063** | 0.8835 |
+| **Macro F1 (ô nhãn)** | **0.7879** | 0.7530 |
+| **Sentiment Macro F1** | **0.7327** | 0.6909 |
+| **Sentiment Micro F1** | **0.7997** | 0.7535 |
+| **ACD F1** | **0.8950** | 0.8584 |
+| **ACD Macro F1** | **0.8742** | 0.8106 |
+| **Pair Micro F1** | 0.9697 | **0.9727** |
+| **Pair Macro F1** | **0.8862** | 0.8839 |
+| **Exact Match** | **0.4200** | 0.3395 |
 
-## 6. Quy ước chia cho 0
+> 📌 Kết quả tổng hợp 5-seed, phân tích dữ liệu và so sánh với các nghiên cứu trước (SA2SL, ViSoBERT, Thin et al.) nằm tại `ABSA_Project/results/report_assets/comparison_with_related_studies.md`.
 
-- Độ đo mức ô nhãn: theo `zero_division=0` của scikit-learn.
-- ACD macro: bỏ qua khía cạnh không xác định; trả 1,0 nếu không có khía cạnh
-  nào được gán hoặc dự đoán.
-- Sentiment macro: trung bình trên 3 lớp Negative/Neutral/Positive.
-- Pair macro: trung bình trên hợp các cặp (khía cạnh, cực tính) xuất hiện ở
-  nhãn thật hoặc dự đoán.
+---
 
-Quy ước này được ghi rõ trong `evaluate_absa.py` và kiểm chứng bằng
-`tests/test_metrics.py`.
+## 🌐 6. Ứng dụng Web Demo (Brand Health Intelligence)
 
-## 7. Ghi chú tái lập
+Hệ thống demo tích hợp mô hình PhoBERT ABSA vào dashboard theo dõi sức khỏe thương hiệu nằm trong thư mục [`brand_health_demo/`](brand_health_demo/):
+- **Backend AI:** Python FastAPI (`brand_health_demo/python_api/`)
+- **Web Dashboard:** PHP / MySQL (`brand_health_demo/public/`, `app/`)
+- Xem chi tiết hướng dẫn cài đặt tại [`brand_health_demo/README.md`](brand_health_demo/README.md).
 
-- Không sửa dữ liệu gốc; mọi đầu ra tái tạo nằm trong thư mục `reproduced/`.
-- Checkpoint PhoBERT (~1,6 GB) không được đưa vào Git; xem hướng dẫn huấn luyện
-  ở mục 4.5 để sinh lại.
-- Trên Windows, đặt `PYTHONIOENCODING=utf-8` trước khi chạy để tránh lỗi
-  hiển thị tiếng Việt.
+---
+
+## 📦 7. Lưu ý về Trọng số mô hình (Model Checkpoints)
+
+Do giới hạn dung lượng tệp của GitHub (100 MB/tệp), các checkpoint PhoBERT (`~1.54 GB/tệp`) trong `ABSA_Project/models/` không được đẩy lên Git. Bạn có thể tự huấn luyện lại bằng lệnh tại mục **4.2** hoặc đặt tệp `best_phobert_absa.pt` đã huấn luyện vào `ABSA_Project/models/` trước khi chạy đánh giá hoặc web demo.
