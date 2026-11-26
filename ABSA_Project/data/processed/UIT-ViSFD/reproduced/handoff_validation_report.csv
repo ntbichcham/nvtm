@@ -1,4 +1,0 @@
-﻿Dataset,Original_Rows,Prepared_Rows,Row_Count_Match,Original_Comment_Preserved,Original_Label_Preserved,Index_Order_Preserved,Segmented_Column_Exists,Empty_Segmented_Text,Token_Column_Exists,Missing_Token_Length,Date_Columns_Exist,Missing_Columns,Validation_Passed
-Train,7786,7786,True,True,True,True,True,0,True,0,True,,True
-Dev,1112,1112,True,True,True,True,True,0,True,0,True,,True
-Test,2224,2224,True,True,True,True,True,0,True,0,True,,True

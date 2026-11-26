@@ -1,4 +1,0 @@
-﻿Dataset,Total_Comments,Min_Tokens,Max_Tokens,Mean_Tokens,Median_Tokens,P90,P95,P99,Within_128,Within_128_Percent,Exceed_128,Exceed_128_Percent,Within_256,Within_256_Percent,Exceed_256,Exceed_256_Percent
-Train,7786,5,278,41.61,34.0,72.0,88.0,126.0,7716,99.1,70,0.9,7785,99.99,1,0.01
-Dev,1112,6,245,40.42,33.0,69.0,86.45,115.89,1105,99.37,7,0.63,1112,100.0,0,0.0
-Test,2224,5,302,41.68,34.0,72.0,89.0,125.0,2205,99.15,19,0.85,2223,99.96,1,0.04
