@@ -11,12 +11,25 @@ __pycache__/
 .venv/
 venv/
 
+# Local secrets and local tool models
+.env
+**/.env
+!**/.env.example
+brand_health_demo/python_api/.vncorenlp/
+brand_health_demo/database/backups/*.sql
+
 # Training logs and temporary files
 ABSA_Project/results/logs/
+ABSA_Project/results/_logs/
+ABSA_Project/results/**/predictions_*.csv
+ABSA_Project/results/**/*.npz
 tmp_pages/
 *.tmp
 *.log
 
-# OS files
+# Archives & OS files
+*.zip
+*.rar
+*.7z
 Thumbs.db
 .DS_Store
