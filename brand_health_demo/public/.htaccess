@@ -1,0 +1,11 @@
+# Chặn liệt kê thư mục.
+Options -Indexes
+
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+</IfModule>
+
+# Không cho truy cập file nhạy cảm nếu có ai đó copy nhầm vào public.
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>

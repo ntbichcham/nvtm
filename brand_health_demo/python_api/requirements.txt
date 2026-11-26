@@ -1,0 +1,16 @@
+# Python API - PhoBERT ABSA
+# Môi trường đã kiểm chứng: Python 3.10.22, torch 2.13.0+cu130, transformers 4.57.3.
+# Không cần cài lại torch/transformers nếu môi trường hiện tại đã có.
+
+fastapi>=0.115
+uvicorn[standard]>=0.30
+pydantic>=2.8
+
+torch>=2.0
+transformers>=4.40
+numpy>=1.26
+pandas>=2.0
+
+py_vncorenlp>=0.1.4
+pyjnius>=1.6
+python-dotenv>=1.0

@@ -1,0 +1,11 @@
+{
+  "review_content": "Máy chạy rất êm, pin trâu dùng cả ngày, nhưng loa ngoài hơi nhỏ.",
+  "review_rating": "4",
+  "review_date": "2026-11-14",
+  "xss_content": "<script>alert(1)</script> pin tốt, màn hình sáng",
+  "xss_marker": "&lt;script&gt;",
+  "err_empty": "không được để trống",
+  "err_future": "không được ở tương lai",
+  "err_rating": "Số sao phải từ 1 đến 5",
+  "err_date": "Ngày đánh giá không hợp lệ"
+}

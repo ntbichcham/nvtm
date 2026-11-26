@@ -1,0 +1,6 @@
+# Log ứng dụng
+*.log
+!/.gitkeep
+
+# Dữ liệu upload/tạm (nếu bổ sung sau)
+/tmp/
